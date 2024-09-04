@@ -62,13 +62,13 @@ body {
 }
 
 /* Grid Styles for Content Organization */
-.education-grid, .experience-grid, .publications-grid, .awards-grid, .more-about-me-grid {
+.education-grid, .rp-grid, .experience-grid, .publications-grid, .awards-grid, .more-about-me-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 
-.education-item, .experience-item, .publication-item, .award-item, .more-about-me-item {
+.education-item, .rp-grid, .experience-item, .publication-item, .award-item, .more-about-me-item {
     background: #fafafa;
     padding: 20px;
     border-radius: 8px;
