@@ -1,0 +1,72 @@
+{\rtf1\ansi\ansicpg936\cocoartf2761
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;}
+{\colortbl;\red255\green255\blue255;\red14\green14\blue14;}
+{\*\expandedcolortbl;;\cssrgb\c6700\c6700\c6700;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tqr\tx500\tx660\li660\fi-660\sl324\slmult1\partightenfactor0
+
+\f0\fs28 \cf2 /* Basic Styles */\
+body \{\
+    font-family: Arial, sans-serif;\
+    margin: 0;\
+    padding: 0;\
+    background-color: #f9f9f9;\
+    color: #333;\
+\}\
+\
+header \{\
+    text-align: center;\
+    background-color: #4CAF50;\
+    color: white;\
+    padding: 1em 0;\
+\}\
+\
+header img.profile-photo \{\
+    width: 150px;\
+    height: 150px;\
+    border-radius: 50%;\
+    margin-bottom: 1em;\
+\}\
+\
+h1 \{\
+    margin: 0;\
+\}\
+\
+p \{\
+    margin: 0.5em 0;\
+\}\
+\
+a \{\
+    color: #4CAF50;\
+    text-decoration: none;\
+\}\
+\
+a.cv-link \{\
+    display: inline-block;\
+    margin-top: 1em;\
+    padding: 0.5em 1em;\
+    background-color: #4CAF50;\
+    color: white;\
+    border-radius: 5px;\
+    text-decoration: none;\
+\}\
+\
+a.cv-link:hover \{\
+    background-color: #45a049;\
+\}\
+\
+section \{\
+    padding: 2em;\
+    margin: 1em 0;\
+    background-color: white;\
+    border-radius: 5px;\
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);\
+\}\
+\
+/* Footer */\
+footer \{\
+    text-align: center;\
+    padding: 1em 0;\
+    background-color: #f1f1f1;\
+    color: #666;\
+\}}
