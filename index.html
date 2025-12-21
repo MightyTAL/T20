@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="description" content="Aoling Tang PhD student in Management at Frankfurt School of Finance & Management." />
+  <meta name="description" content="Aoling Tang — PhD student in Management at Frankfurt School of Finance & Management." />
   <meta name="author" content="Aoling Tang" />
   <title>Aoling Tang</title>
 
@@ -14,6 +14,7 @@
       --muted:#666;
       --surface:#f7f8fa;
       --bg:#ffffff;
+      --accent:#2563eb;
     }
 
     *{box-sizing:border-box}
@@ -62,19 +63,28 @@
       font-size:1rem;
     }
 
-    .email{
-      margin-top:.6rem;
-      font-size:.95rem;
+    /* contact icons row */
+    .contact-row{
+      margin-top:.7rem;
+      display:flex;
+      gap:0.9rem;
+      align-items:center;
+      flex-wrap:wrap;
     }
 
-    .email a{
-      color:inherit;
+    .icon-link{
+      display:inline-flex;
+      align-items:center;
+      gap:.5rem;
       text-decoration:none;
+      color:inherit;
+      font-size:0.95rem;
+      background:transparent;
+      border-radius:8px;
+      padding:.2rem .5rem;
     }
 
-    .email a:hover{
-      text-decoration:underline;
-    }
+    .icon-link:hover{background:rgba(0,0,0,.03)}
 
     /* sections */
     section{
@@ -118,9 +128,8 @@
         grid-template-columns:1fr;
         text-align:center;
       }
-      .photo{
-        margin:0 auto;
-      }
+      .photo{margin:0 auto}
+      .contact-row{justify-content:center}
     }
   </style>
 </head>
@@ -132,38 +141,46 @@
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
       <div>
         <h1>Aoling Tang</h1>
-        <p class="affiliation">
-          PhD Student in Management<br>
-          Frankfurt School of Finance &amp; Management
-        </p>
-        <p class="email">
-          <a href="mailto:A.Tang@fs.de">A.Tang@fs.de</a>
-        </p>
+        <p class="affiliation">PhD Student in Management<br>Frankfurt School of Finance &amp; Management</p>
+
+        <!-- contact icons: email SVG + ORCID small icon -->
+        <div class="contact-row" aria-label="Contact">
+          <!-- Email icon + address -->
+          <a class="icon-link" href="mailto:A.Tang@fs.de" title="Email A.Tang@fs.de">
+            <!-- mail SVG -->
+            <svg width="18" height="14" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+              <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M2 3.2L10 8.2L18 3.2" stroke="#111" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>A.Tang@fs.de</span>
+          </a>
+
+          <!-- ORCID icon + link -->
+          <a class="icon-link" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer" title="ORCID iD">
+            <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" style="width:18px;height:18px;display:inline-block" />
+            <span>0009-0009-1643-0025</span>
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- About -->
+    <!-- About (emphasize current research) -->
     <section class="about">
       <h2>About</h2>
-      <p>
-        Hi, I am Aoling Tang. I am currently a PhD student in management at Frankfurt School of Finance &amp; Management.
-      </p>
-      <p>
-        My research focuses on organizational decision making, with particular interest in how data and analytics shape
-        decision processes under uncertainty.
-      </p>
-      <p>
-        Feel free to contact me by email.
-      </p>
+      <p>Hi, I am <strong>Aoling Tang</strong>. I am a PhD student in management at Frankfurt School of Finance &amp; Management.</p>
+
+      <p><strong>My current research focuses on organizational decision making.</strong> I study how organizations make decisions using data and analytics, especially under uncertainty, and how these decision processes shape firm outcomes.</p>
+
+      <p>Feel free to contact me by email.</p>
     </section>
 
-    <!-- Education -->
+    <!-- Education (clean, minimal) -->
     <section class="education">
       <h2>Education</h2>
       <ul>
         <li>
           <span class="institution">Frankfurt School of Finance &amp; Management</span><br>
-          <span class="degree">PhD in Management, 2025–present</span>
+          <span class="degree">PhD in Management, 09/2025 – present</span>
         </li>
         <li>
           <span class="institution">Beihang University, China</span><br>
