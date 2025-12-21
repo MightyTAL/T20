@@ -9,57 +9,41 @@
 
   <style>
     :root{
-      --maxw:860px;             /* 来自你喜欢的风格（更宽的主体） */
+      --maxw:860px;
       --pad:24px;
       --text:#0f172a;
-      --muted:#6b7280;
       --accent:#1766d8;
       --bg:#ffffff;
       --chip-bg:#f3f4f6;
       --border:rgba(15,23,42,.06);
     }
 
-    /* Basic reset */
-    *{box-sizing:border-box}
     html{
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
-      -webkit-font-smoothing:antialiased;
     }
+
     body{
       margin:0;
-      color:var(--text);
       background:var(--bg);
+      color:var(--text);
       font-size:17px;
       line-height:1.7;
     }
 
-    /* --- Global safety fixes (kept) --- */
-    p, h1, h2, h3, span {
-      hyphens: none !important;
-      word-break: normal !important;
-      overflow-wrap: normal !important;
-      text-indent: 0 !important;
-      letter-spacing: normal !important;
-      word-spacing: normal !important;
-    }
-
-    /* 主容器：改成你喜欢的宽度与内边距 */
     main{
       max-width:var(--maxw);
       margin:70px auto;
       padding:0 var(--pad);
     }
 
-    /* Header: 使用你参考代码的横排风格（flex） */
+    /* Header */
     header{
       display:flex;
       gap:36px;
       align-items:center;
       margin-bottom:48px;
-      text-align:left; /* 文字靠左，与 flex 对齐 */
     }
 
-    /* avatar */
     .photo{
       width:160px;
       height:160px;
@@ -71,184 +55,140 @@
       flex:0 0 160px;
     }
 
-    /* header 文本区 */
-    .header-text { /* keep semantics if needed */
-      min-width:0;
-    }
-
     h1{
       margin:0 0 10px 0;
-      font-size:2.4rem;     /* 来自参考：更大标题 */
+      font-size:2.4rem;
       font-weight:700;
       letter-spacing:-0.3px;
     }
 
     .affiliation{
-      margin:0 0 12px 0;
-      color:var(--muted);
-      font-size:1.05rem;    /* 参考字号 */
-      line-height:1.45;
+      margin:0 0 14px 0;
+      font-size:1.05rem;
     }
 
-    /* 链接行（保持原 chip 风格，但放在 header-text 的 links 保持原味） */
-    .links{ margin-top:6px; }
-    .links a{
-      margin-right:16px;
-      font-size:0.95rem;
-      color:var(--text);
-      text-decoration:none;
-    }
-    .links a:hover{ text-decoration:underline; }
-
-    /* contact-row: 为兼容保留，但视觉上放在 header-text 下 */
+    /* Contact chips ONLY */
     .contact-row{
       display:flex;
-      gap:10px;
+      gap:12px;
       flex-wrap:wrap;
-      margin-top:10px;
     }
 
     .chip{
       display:inline-flex;
       align-items:center;
       gap:8px;
-      padding:8px 12px;
+      padding:8px 14px;
       border-radius:999px;
       background:var(--chip-bg);
-      color:inherit;
+      color:var(--text);
       text-decoration:none;
-      font-size:0.92rem;
+      font-size:0.95rem;
       border:1px solid var(--border);
-      transition:background .15s ease, color .15s ease, transform .06s ease;
     }
 
     .chip:hover{
-      background:rgba(23,102,216,0.06);
-      color:var(--accent);
-      transform:translateY(-1px);
+      background:rgba(23,102,216,0.08);
     }
 
-    .icon{ width:16px; height:16px; flex:0 0 16px; display:inline-block; }
+    .icon{
+      width:16px;
+      height:16px;
+    }
 
-    section{ margin-top:48px; }
+    /* Section */
+    section{
+      margin-top:56px;
+    }
 
     section h2{
-      margin:0 0 16px;
-      font-size:1.3rem;       /* 参考代码的 section 标题 */
+      margin:0 0 20px 0;
+      font-size:1.3rem;
       font-weight:600;
-      letter-spacing:0.2px;
-      padding-bottom:8px;
       border-bottom:1px solid var(--border);
+      padding-bottom:8px;
     }
 
-    /* 保持你之前想要的 About 改良字号/行距，但也沿用参考宽度 */
+    /* About */
     .about{
-      max-width:720px;       /* 来自参考 */
+      max-width:720px;
     }
 
     .about p{
-      margin:0 0 18px 0;     /* 参考的段距 */
-      font-size:1rem;        /* 改良版字号 */
-      line-height:1.65;      /* 改良版行高 */
-      color:var(--text);
-      text-align:left;
-    }
-
-    .about p:last-of-type{
-      color:var(--muted);
-      font-size:0.98rem;
-    }
-
-    .emph{
-      font-weight:600;
-      display:block;
-      margin:10px 0;
-      color:var(--text);
+      margin:0 0 18px 0;
       font-size:1rem;
-      line-height:1.65;
-      text-align:left;
+      color:var(--text); /* 所有段落统一颜色 */
     }
 
-    /* 响应式：当窗口窄时回落为竖排 */
+    .about .emph{
+      font-weight:700;
+    }
+
+    /* Responsive */
     @media (max-width:700px){
       header{
         flex-direction:column;
         align-items:flex-start;
-        text-align:left;
       }
+
       .photo{
         width:140px;
         height:140px;
       }
-      main{
-        margin:40px auto;
-        padding:0 16px;
-      }
-      .about{ max-width:100%; }
-    }
-
-    a:focus{
-      outline:3px solid rgba(23,102,216,0.16);
-      outline-offset:4px;
-      border-radius:8px;
     }
   </style>
 </head>
 
 <body>
   <main>
-    <!-- Header (结构保持不变) -->
+    <!-- Header -->
     <header>
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
-      <div class="header-text">
+
+      <div>
         <h1>Aoling Tang</h1>
         <p class="affiliation">
           PhD Student in Management<br>
           Frankfurt School of Finance &amp; Management
         </p>
 
-        <!-- 在 header-text 内保留 links（与之前风格一致） -->
-        <div class="links" aria-hidden="true">
-          <a href="mailto:A.Tang@fs.de">Email</a>
-          <a href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer">ORCID</a>
-          <a href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </div>
-
-        <!-- 同时保留 chips 行（原有交互） -->
-        <div class="contact-row" aria-label="Contact">
-          <a class="chip" href="mailto:A.Tang@fs.de" title="Email">
-            <svg class="icon" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <!-- ONLY this row remains -->
+        <div class="contact-row">
+          <a class="chip" href="mailto:A.Tang@fs.de">
+            <svg class="icon" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/>
               <path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/>
             </svg>
-            <span>A.Tang@fs.de</span>
+            A.Tang@fs.de
           </a>
 
-          <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer" title="ORCID">
-            <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" />
-            <span>ORCID</span>
+          <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank">
+            <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" />
+            ORCID
           </a>
 
-          <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
             </svg>
-            <span>LinkedIn</span>
+            LinkedIn
           </a>
         </div>
       </div>
     </header>
 
-    <!-- About (内容保持完全不变) -->
-    <section class="about" aria-labelledby="about-heading">
-      <h2 id="about-heading">About</h2>
+    <!-- About -->
+    <section class="about">
+      <h2>About</h2>
 
       <p>
         Hi, I am <strong>Aoling Tang</strong>, a PhD student in management at Frankfurt School of Finance &amp; Management.
         I completed my BSc and MSc in Economics at Beihang University.
       </p>
 
-      <p class="emph"><strong>My research interests lie in organizational decision making.</strong></p>
+      <p class="emph">
+        My research interests lie in organizational decision making.
+      </p>
 
       <p>
         I value conversations that help refine research questions and perspectives.
