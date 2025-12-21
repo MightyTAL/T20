@@ -6,7 +6,7 @@
   <title>Aoling Tang</title>
 
   <style>
-    /* ===== 基础设置，越少越安全 ===== */
+    /* ===== 全局基础设置：极简 & 稳定 ===== */
     html {
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
     }
@@ -20,42 +20,73 @@
       line-height: 1.7;
     }
 
-    /* 容器 */
+    /* 禁止任何自动断词或缩进 */
+    p, h1, h2, span {
+      hyphens: none;
+      word-break: normal;
+      overflow-wrap: normal;
+      text-indent: 0;
+    }
+
+    /* 页面主体 */
     main {
-      max-width: 720px;
+      max-width: 760px;
       margin: 60px auto;
       padding: 0 20px;
     }
 
-    /* 标题 */
-    h1 {
+    /* 顶部信息区 */
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-bottom: 36px;
+    }
+
+    .photo {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .header-text h1 {
+      margin: 0 0 6px 0;
       font-size: 2.2rem;
-      margin: 0 0 8px 0;
       font-weight: 700;
     }
 
-    /* 副标题 */
     .affiliation {
+      margin: 0 0 10px 0;
       font-size: 1rem;
-      margin: 0 0 24px 0;
     }
 
-    /* About 标题 */
+    .links a {
+      display: inline-block;
+      margin-right: 12px;
+      text-decoration: none;
+      color: #111111;
+      font-size: 0.95rem;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    /* 分区标题 */
     h2 {
       font-size: 1.1rem;
-      margin: 40px 0 16px 0;
       font-weight: 600;
+      margin: 36px 0 16px 0;
     }
 
-    /* 段落：全部同一规则 */
-    p {
+    /* About 段落 */
+    .about p {
       margin: 0 0 14px 0;
       text-align: left;
-      font-weight: 400;
-      color: #111111;
     }
 
-    /* 只描黑需要描黑的 */
+    /* 仅描黑需要描黑的内容 */
     .name {
       font-weight: 700;
     }
@@ -64,38 +95,57 @@
       font-weight: 700;
     }
 
-    /* 禁止任何奇怪断词或缩进 */
-    p, h1, h2, span {
-      hyphens: none;
-      word-break: normal;
-      overflow-wrap: normal;
-      text-indent: 0;
+    /* 响应式（手机） */
+    @media (max-width: 640px) {
+      .header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .photo {
+        width: 120px;
+        height: 120px;
+      }
     }
   </style>
 </head>
 
 <body>
   <main>
-    <h1><span class="name">Aoling Tang</span></h1>
-    <p class="affiliation">
-      PhD student in management, Frankfurt School of Finance &amp; Management
-    </p>
+    <!-- Header -->
+    <div class="header">
+      <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
 
+      <div class="header-text">
+        <h1><span class="name">Aoling Tang</span></h1>
+        <p class="affiliation">
+          PhD student in management, Frankfurt School of Finance &amp; Management
+        </p>
+        <div class="links">
+          <a href="mailto:A.Tang@fs.de">A.Tang@fs.de</a>
+          <a href="https://orcid.org/0009-0009-1643-0025" target="_blank">ORCID</a>
+          <a href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- About -->
     <h2>About</h2>
+    <div class="about">
+      <p>
+        Hi, I am <span class="name">Aoling Tang</span>, a PhD student in management at Frankfurt School of Finance &amp; Management.
+        I completed my BSc and MSc in Economics at Beihang University.
+      </p>
 
-    <p>
-      Hi, I am <span class="name">Aoling Tang</span>, a PhD student in management at Frankfurt School of Finance &amp; Management.
-      I completed my BSc and MSc in Economics at Beihang University.
-    </p>
+      <p class="research">
+        My research interests lie in organizational decision making.
+      </p>
 
-    <p class="research">
-      My research interests lie in organizational decision making.
-    </p>
-
-    <p>
-      I value conversations that help refine research questions and perspectives.
-      Please feel free to contact me.
-    </p>
+      <p>
+        I value conversations that help refine research questions and perspectives.
+        Please feel free to contact me.
+      </p>
+    </div>
   </main>
 </body>
 </html>
