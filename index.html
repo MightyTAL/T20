@@ -1,207 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
-<!-- Falling Confetti -->
-<div class="falling-item"></div>
-<div class="falling-item" style="left: calc(30% - 20px);"></div>
-<div class="falling-item" style="left: calc(70% - 20px);"></div>
+<html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Aoling Tang's personal website featuring research, publications, photography, and blog.">
-    <meta name="keywords" content="Aoling Tang, research, publications, photography, blog, personal website">
-    <meta name="author" content="Aoling Tang">
-    <title>Personal Website - Aoling Tang</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Aoling Tang | PhD student personal website: research, education, contact." />
+  <meta name="keywords" content="Aoling Tang, PhD, research, economics, Beihang University" />
+  <meta name="author" content="Aoling Tang" />
+  <title>Aoling Tang — PhD Student</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="script.js"></script>
 </head>
 
 <body>
-    <!-- Header Section -->
-    <header class="chanel-header">
-        <nav class="chanel-nav sticky">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#about-me">About Me</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#research">Research</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="more-about-me.html">More About Me</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-        <div class="profile-container">
-            <img src="your-photo.jpg" alt="Profile photo of Aoling Tang" class="profile-photo">
-            <h1>Aoling Tang</h1>
-            <p>“浮舟沧海 立马昆仑”<br>(Sailing across the vast sea, standing tall on the Kunlun Mountains)</p>
-        </div>
-    </header>
+  <a class="skip-link" href="#main">跳到主体内容</a>
 
-    <!-- About Me Section -->
-    <section id="about-me" class="chanel-section">
-        <h2>About Me</h2>
-        <p>Hi! My name is Aoling TANG, a postgraduate student majoring in economics at Beihang University, China. I’m very happy to meet you here!</p>
-        <p>My research interests include innovation, digitization, sustainability, organizations, corporate governance, and corporate social responsibility, organization theory, industry emergence and evolution.</p>
-        <a href="https://drive.google.com/file/d/1G2Y0lY2DV4MrSbXPpge7UaK9F9xtyq3I/view?usp=share_link" class="btn highlight">View My CV</a>
-    </section>
+  <!-- Falling Confetti（可选装饰，用户可通过 prefers-reduced-motion 关闭） -->
+  <div class="falling-layer" aria-hidden="true">
+    <span class="falling-item" style="--x:12%"></span>
+    <span class="falling-item" style="--x:48%"></span>
+    <span class="falling-item" style="--x:78%"></span>
+  </div>
 
+  <!-- Header / Nav -->
+  <header class="site-header" id="top">
+    <nav class="site-nav" aria-label="主导航" data-open="false">
+      <a class="brand" href="#top">Aoling Tang</a>
 
-    <!-- Education Section -->
-    <section id="education" class="chanel-section">
-        <h2>Education</h2>
-        <div class="education-grid">
-            <div class="education-item">
-                <h3>Beihang University, China</h3>
-                <p><strong>Master in Economics</strong> (09/2023-Present)<br>GPA: 3.86/4.0<br>Main Courses: Advanced Microeconomics (97), Advanced Macroeconomics (98)<br>IELTS: 7 | GRE: 324</p>
-            </div>
-            <div class="education-item">
-                <h3>Beihang University, China</h3>
-                <p><strong>Bachelor of Economics</strong> (09/2019-06/2023)<br>GPA: 3.82/4.0<br>Average Score: 91</p>
-            </div>
-            <div class="education-item">
-                <h3>Transcript</h3>
-                <a href="https://drive.google.com/file/d/1VDf7EAOeg8Bv3Yv3W84Tu2rH4EXrvN17/view?usp=share_link" target="_blank" class="btn">View My Transcript</a>
-            </div>
-        </div>
-    </section>
+      <button class="nav-toggle" aria-controls="nav-menu" aria-expanded="false">菜单</button>
 
-    <!-- Research Proposal Section -->
-    <section id="research" class="chanel-section">
-        <h2>Research Proposal</h2>
-        <h3>How does Data-Driven Innovation affect the environmental performance of organizations?</h3>
-        <p>In order to address the shortcomings of previous research, this research proposal adopts the perspective of dynamic capability theory and proposes a theoretical model. The aim is to explore the impact of DDI on environmental performance in enterprises as well as reveal the mediating role of green innovation and the moderating role of environmental responsibility.</p>
-        <p><a href="https://drive.google.com/file/d/1n2hpX8oV_LSJoKI7wCMGqh1_vXEMT9K5/view?usp=share_link" target="_blank" class="btn">View Full Research Proposal</a></p>
-        <p><a href="https://docs.google.com/presentation/d/1xWeIpuT4AUfXbUePcwKfG12AlREksRVX/edit?usp=share_link" target="_blank" class="btn">View Research Presentation</a></p>
-    </section>
-    
-<!-- Research Experience Section -->
-    <section id="research-experience" class="chanel-section">
-        <h2>Research Experience</h2>
-        <div class="experience-grid">
-            <div class="experience-item">
-                <h3>2021-2022: Beijing Social Science Fund Decision Consulting Key Project</h3>
-                <p><strong>Research Topic:</strong> Research on the Radiation Power of Beijing National Science and Technology Innovation Center</p>
-                <p><strong>Contribution:</strong> Accomplished an essay, assisted the members in the research group in completing their paper</p>
-            </div>
-            <div class="experience-item">
-                <h3>2021-2022: Planning Key Project</h3>
-                <p><strong>Research Topic:</strong> Research on the Construction of Beijing International Science and Technology Innovation Center from the Perspective of Innovation Ecology</p>
-                <p><strong>Contribution:</strong> Discussed the topic about the impact of heterogeneity of corporate executives on innovation and enterprise credit rating. Accomplished a report, assisted the members in the research group to collect data.</p>
-            </div>
-            <div class="experience-item">
-                <h3>2021: Shenzhen Science and Technology Plan Project</h3>
-                <p><strong>Research Topic:</strong> Research on Shenzhen Technology Transfer System and Mechanism in the New Era</p>
-                <p><strong>Contribution:</strong> Wrote the concluding report, assisted the members in the research group to collect data.</p>
-            </div>
-            <div class="experience-item">
-                <h3>2023: Textbook on Financial Technology</h3>
-               <p><strong>Contribution:</strong> Wrote the basic knowledge of financial technology, including the concept of financial technology, system composition, related policies, etc.</p>
-            </div>
-            <div class="experience-item">
-                <h3>2023-2024: Monograph on Regional Innovation Ecosystem</h3>
-                <p><strong>Contribution:</strong> Wrote four of the nine chapters, including evaluation of suitability, maturity, and health of regional innovation ecosystem, comparative analysis of city dimension in regional innovation ecosystem evaluation, impact of the business environment on the innovation ecosystem, and stage dimension analysis of regional innovation ecosystem.</p>
-            </div>
-            <div class="experience-item">
-                <h3>2024: Ministry of Industry and Information Technology Soft Subject</h3>
-                <p><strong>Research Topic:</strong> Evaluation of the effect of policies to support the development of small and medium-sized enterprises and suggestions for optimization and improvement</p>
-                <p><strong>Contribution:</strong> Taking charge of a soft subject.</p>
-            </div>
-            <div class="experience-item">
-                <h3>2024 General Projects of the National Social Science Fund</h3>
-                <p><strong>Research Topic:</strong> Research on evolution mechanism and guidance strategy of cooperative network</p>
-                <p><strong>Contribution:</strong> Finished a paper.</p>
-            </div>
+      <ul id="nav-menu" class="nav-menu">
+        <li><a href="#about-me" class="active">About</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact" class="nav-cta">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero">
+      <img src="your-photo.jpg" alt="Aoling Tang 头像" class="profile-photo" />
+      <div class="hero-text">
+        <h1>Aoling Tang</h1>
+        <!-- TODO: 把下面的博士信息替换为你的真实信息 -->
+        <p class="subtitle">PhD Student · Department of Economics · Beihang University</p>
+        <p class="quote">“浮舟沧海 立马昆仑”<br><span class="quote-en">(Sailing across the vast sea, standing tall on the Kunlun Mountains)</span></p>
+
+        <div class="hero-actions">
+          <a class="btn highlight" target="_blank" rel="noopener noreferrer"
+             href="https://drive.google.com/file/d/1G2Y0lY2DV4MrSbXPpge7UaK9F9xtyq3I/view?usp=share_link">View CV</a>
+          <a class="btn" href="mailto:tal2023@buaa.edu.cn">Email</a>
+          <a class="btn" target="_blank" rel="me noopener noreferrer" href="https://orcid.org/0009-0009-1643-0025">ORCID</a>
         </div>
-    </section>
-       
-            
-    <!-- Published Papers Section -->
-    <section id="publications" class="chanel-section">
-        <h2>Published Papers and Course Papers</h2>
-        <div class="publications-grid">
-            <div class="publication-item">
-                <h3>The impact of integration of industry and finance on green total factor productivity of enterprises</h3>
-                <a href="https://drive.google.com/file/d/1mSZXs6TpGcA7P0VDK5ku_mhQSi_j5B4r/view?usp=share_link" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>Comparative Study on Technology Transfer Efficiency of Beijing, Shanghai, and Shenzhen Based on DEA Model</h3>
-                <a href="https://drive.google.com/file/d/177Lqlb35UdxbgcnCZy0UkPLXpP8QultB/view?usp=share_link" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>How does the integration of finance and industry affect green total factor productivity? A Micro-Exploration from China's Listed Firms</h3>
-                <a href="https://drive.google.com/file/d/1cwVs1mOKtEwmkfY5KSamilT-6TifY_r1/view?usp=share_link" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>Research on the impact of innovation on informal employment</h3>
-                <a href="https://drive.google.com/file/d/1EUlEXvv8CUS9Ur1zAgykX3fhvnw1krJM/view?usp=sharing" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>Socialization and Consumption: A Study on Health Care Expenditure among Chinese Elderly</h3>
-                <a href="https://drive.google.com/file/d/1KAPsv3P-NvPf69vs5_BoMZlVNdyy2JC9/view?usp=sharing" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>Research on the Impact of Institutional Discourse Power on Standard Internationalization</h3>
-                <a href="https://drive.google.com/file/d/1Kn9SCLSly_3gR2pBTl10C89Zb8ywjDDP/view?usp=share_link" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>Research on the impact of business environment on regional innovation efficiency</h3>
-                <a href="https://drive.google.com/file/d/1tZOr6jCHKRai359EBuAhargIJxCcliR9/view?usp=share_link" target="_blank" class="btn">View Full Paper</a>
-            </div>
-            <div class="publication-item">
-                <h3>Part of the manuscript</h3>
-                <a href="https://drive.google.com/file/d/1sU9OgyEtmT3UA9GvwAtSvlrN9xEpgSf5/view?usp=share_link" target="_blank" class="btn">View Full Paper</a>
-            </div>
-        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- About -->
+    <section id="about-me" class="section">
+      <h2>About Me</h2>
+      <p>你好！我是 <strong>Aoling Tang</strong>，目前为在读博士。我的研究关注数字化背景下的组织创新、绿色创新与可持续性，以及公司治理与产业演化问题。</p>
+      <p class="muted">研究关键词：innovation · digitalization · sustainability · corporate governance · CSR · organization theory</p>
     </section>
 
-    <!-- Awards Section -->
-    <section id="awards" class="chanel-section">
-        <h2>Awards</h2>
-        <div class="awards-grid">
-            <div class="award-item">
-                <p><strong>2020</strong><br>Scholarship of Academic Excellence</p>
-            </div>
-            <div class="award-item">
-                <p><strong>2021</strong><br>Scholarship of Academic Excellence</p>
-            </div>
-                <div class="award-item">
-                <p><strong>2021</strong><br>Scholarship of Social Practice</p>
-            </div>
-            <div class="award-item">
-                <p><strong>2022</strong><br>Scholarship of Academic Excellence</p>
-            </div>
-            <div class="award-item">
-                <p><strong>2023</strong><br>Outstanding Graduate</p>
-            </div>
-            <div class="award-item">
-                <p><strong>2023</strong><br>Freshman Scholarship <strong>(Top 4%)</strong></p>
-            </div>
+    <!-- Research (简短版) -->
+    <section id="research" class="section">
+      <h2>Research</h2>
+      <p>当前研究方向包括：数据驱动创新（Data-Driven Innovation）对企业环境绩效的影响、绿色创新的中介机制以及环境责任的调节效应等。方法上侧重于实证分析（面板数据、准实验设计等）。</p>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <h2>Education</h2>
+      <div class="education-grid">
+        <div class="edu-card">
+          <h3>Beihang University, China</h3>
+          <p><strong>Master in Economics</strong> (09/2023 – Present) <br>GPA: 3.86/4.0</p>
         </div>
+
+        <div class="edu-card">
+          <h3>Beihang University, China</h3>
+          <p><strong>Bachelor of Economics</strong> (09/2019 – 06/2023) <br>GPA: 3.82/4.0</p>
+        </div>
+
+        <div class="edu-card">
+          <h3>Transcript</h3>
+          <a class="btn" target="_blank" rel="noopener noreferrer"
+             href="https://drive.google.com/file/d/1VDf7EAOeg8Bv3Yv3W84Tu2rH4EXrvN17/view?usp=share_link">View Transcript</a>
+        </div>
+      </div>
     </section>
-     <!-- Contact Section -->
-    <section id="contact" class="chanel-section">
-        <h2>Contact Me</h2>
-        <p>If you'd like to get in touch, feel free to reach out via email.</p>
-        <p>Email: <a href="mailto:tal2023@buaa.edu.cn">tal2023@buaa.edu.cn</a></p>
-           <a
-    id="cy-effective-orcid-url"
-    class="underline"
-     href="https://orcid.org/0009-0009-1643-0025"
-     target="orcid.widget"
-     rel="me noopener noreferrer"
-     style="vertical-align: top">
-     <img
-        src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-        style="width: 1em; margin-inline-start: 0.5em"
-        alt="ORCID iD icon"/>
-      https://orcid.org/0009-0009-1643-0025
-    </a>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <p>欢迎通过邮件联系我：</p>
+      <ul class="contact-list">
+        <li>Email: <a href="mailto:tal2023@buaa.edu.cn">tal2023@buaa.edu.cn</a></li>
+        <li>ORCID: <a target="_blank" rel="me noopener noreferrer" href="https://orcid.org/0009-0009-1643-0025">0009-0009-1643-0025</a></li>
+      </ul>
     </section>
-  
-<!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Aoling Tang. All rights reserved.</p>
-    </footer>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Aoling Tang. All rights reserved.</p>
+  </footer>
 </body>
-
 </html>
