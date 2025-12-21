@@ -9,8 +9,8 @@
 
   <style>
     :root{
-      --maxw:760px;
-      --pad:1.25rem;
+      --maxw:860px;             /* 来自你喜欢的风格（更宽的主体） */
+      --pad:24px;
       --text:#0f172a;
       --muted:#6b7280;
       --accent:#1766d8;
@@ -33,8 +33,7 @@
       line-height:1.7;
     }
 
-    /* --- Global safety fixes --- */
-    /* prevent mid-word hyphenation and any text-indent/strange breaks */
+    /* --- Global safety fixes (kept) --- */
     p, h1, h2, h3, span {
       hyphens: none !important;
       word-break: normal !important;
@@ -44,47 +43,66 @@
       word-spacing: normal !important;
     }
 
+    /* 主容器：改成你喜欢的宽度与内边距 */
     main{
       max-width:var(--maxw);
-      margin:56px auto 80px;
+      margin:70px auto;
       padding:0 var(--pad);
     }
 
+    /* Header: 使用你参考代码的横排风格（flex） */
     header{
-      text-align:center;
-      margin-bottom:44px;
+      display:flex;
+      gap:36px;
+      align-items:center;
+      margin-bottom:48px;
+      text-align:left; /* 文字靠左，与 flex 对齐 */
     }
 
+    /* avatar */
     .photo{
-      width:140px;
-      height:140px;
+      width:160px;
+      height:160px;
       border-radius:50%;
       object-fit:cover;
       background:#f7f8fa;
-      margin:0 auto 18px;
       border:2px solid rgba(15,23,42,0.06);
       box-shadow:0 8px 24px rgba(15,23,42,0.06);
-      display:block;
+      flex:0 0 160px;
+    }
+
+    /* header 文本区 */
+    .header-text { /* keep semantics if needed */
+      min-width:0;
     }
 
     h1{
-      margin:0;
-      font-size:2.2rem;
+      margin:0 0 10px 0;
+      font-size:2.4rem;     /* 来自参考：更大标题 */
       font-weight:700;
       letter-spacing:-0.3px;
     }
 
     .affiliation{
-      margin:10px 0 14px;
+      margin:0 0 12px 0;
       color:var(--muted);
-      font-size:1rem;
+      font-size:1.05rem;    /* 参考字号 */
       line-height:1.45;
     }
 
-    /* contact chips (compact and stable) */
+    /* 链接行（保持原 chip 风格，但放在 header-text 的 links 保持原味） */
+    .links{ margin-top:6px; }
+    .links a{
+      margin-right:16px;
+      font-size:0.95rem;
+      color:var(--text);
+      text-decoration:none;
+    }
+    .links a:hover{ text-decoration:underline; }
+
+    /* contact-row: 为兼容保留，但视觉上放在 header-text 下 */
     .contact-row{
       display:flex;
-      justify-content:center;
       gap:10px;
       flex-wrap:wrap;
       margin-top:10px;
@@ -116,46 +134,57 @@
 
     section h2{
       margin:0 0 16px;
-      font-size:1.05rem;
+      font-size:1.3rem;       /* 参考代码的 section 标题 */
       font-weight:600;
       letter-spacing:0.2px;
       padding-bottom:8px;
       border-bottom:1px solid var(--border);
     }
 
-    /* ---------------- About: 使用“最后改良版”字体设置 ---------------- */
+    /* 保持你之前想要的 About 改良字号/行距，但也沿用参考宽度 */
+    .about{
+      max-width:720px;       /* 来自参考 */
+    }
+
     .about p{
-      margin:0 0 16px;
-      max-width:62ch;              /* 改良版：稳定且易读的行宽 */
-      margin-left:auto;
-      margin-right:auto;
-      text-align:left;
+      margin:0 0 18px 0;     /* 参考的段距 */
+      font-size:1rem;        /* 改良版字号 */
+      line-height:1.65;      /* 改良版行高 */
       color:var(--text);
-      font-size:1rem;              /* 改良版字号 */
-      line-height:1.65;            /* 稍微压紧，阅读舒适 */
+      text-align:left;
     }
 
     .about p:last-of-type{
-      color:var(--muted);          /* 改良版：末段次要色（清晰但不抢戏） */
+      color:var(--muted);
       font-size:0.98rem;
     }
 
-    /* emphasize just this element (keeps left alignment) */
     .emph{
       font-weight:600;
       display:block;
       margin:10px 0;
-      text-align:left;
       color:var(--text);
       font-size:1rem;
       line-height:1.65;
+      text-align:left;
     }
 
-    /* small screens */
-    @media (max-width:640px){
-      main{margin:32px auto 56px}
-      .photo{width:124px;height:124px}
-      .about p{max-width:100%}
+    /* 响应式：当窗口窄时回落为竖排 */
+    @media (max-width:700px){
+      header{
+        flex-direction:column;
+        align-items:flex-start;
+        text-align:left;
+      }
+      .photo{
+        width:140px;
+        height:140px;
+      }
+      main{
+        margin:40px auto;
+        padding:0 16px;
+      }
+      .about{ max-width:100%; }
     }
 
     a:focus{
@@ -168,39 +197,49 @@
 
 <body>
   <main>
-    <!-- Header -->
+    <!-- Header (结构保持不变) -->
     <header>
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
-      <h1>Aoling Tang</h1>
-      <p class="affiliation">
-        PhD Student in Management<br>
-        Frankfurt School of Finance &amp; Management
-      </p>
+      <div class="header-text">
+        <h1>Aoling Tang</h1>
+        <p class="affiliation">
+          PhD Student in Management<br>
+          Frankfurt School of Finance &amp; Management
+        </p>
 
-      <div class="contact-row" aria-label="Contact">
-        <a class="chip" href="mailto:A.Tang@fs.de" title="Email">
-          <svg class="icon" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/>
-          </svg>
-          <span>A.Tang@fs.de</span>
-        </a>
+        <!-- 在 header-text 内保留 links（与之前风格一致） -->
+        <div class="links" aria-hidden="true">
+          <a href="mailto:A.Tang@fs.de">Email</a>
+          <a href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer">ORCID</a>
+          <a href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
 
-        <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer" title="ORCID">
-          <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" />
-          <span>ORCID</span>
-        </a>
+        <!-- 同时保留 chips 行（原有交互） -->
+        <div class="contact-row" aria-label="Contact">
+          <a class="chip" href="mailto:A.Tang@fs.de" title="Email">
+            <svg class="icon" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/>
+              <path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            <span>A.Tang@fs.de</span>
+          </a>
 
-        <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-          <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
-          </svg>
-          <span>LinkedIn</span>
-        </a>
+          <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer" title="ORCID">
+            <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" />
+            <span>ORCID</span>
+          </a>
+
+          <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
+            </svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
       </div>
     </header>
 
-    <!-- About -->
+    <!-- About (内容保持完全不变) -->
     <section class="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
 
