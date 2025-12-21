@@ -109,30 +109,46 @@
       border-bottom:1px solid var(--border);
     }
 
-    /* About: keep line-length generous to avoid awkward breaks */
-    .about p{
-      margin:0 0 16px;
+    /* ============== ABOUT 修正 ============== */
+    .about {
+      display:block;
+      text-align:left;
+    }
+
+    /* 第一段（身份 + 教育） */
+    .about .intro {
+      margin:0 0 14px;
+      font-size:1rem;
+      max-width:70ch;            /* 宽一点以避免被挤断 */
+      margin-left:auto;
+      margin-right:auto;
+      word-break:normal;
+      hyphens:auto;
+    }
+
+    /* 把 "organizational decision making" 单独一行并加粗 */
+    .about .core {
+      margin:0 0 14px;
+      font-weight:700;
+      text-align:center;
+      font-size:1.02rem;
+    }
+
+    /* 最后一段（联系人语气） */
+    .about .closing {
+      margin:0 0 14px;
+      color:var(--muted);
       max-width:62ch;
       margin-left:auto;
       margin-right:auto;
     }
 
-    .about p:last-of-type{
-      color:var(--muted);
-      font-size:0.98rem;
-    }
-
-    .about .emph{
-      font-weight:600;
-      display:block;
-      margin:10px 0;
-    }
-
-    /* Responsive */
+    /* 响应式：手机上缩短图片和边距 */
     @media (max-width:640px){
-      main{margin:32px auto 56px}
+      main{margin:32px auto 56px; padding:0 16px}
       .photo{width:124px;height:124px}
-      .about p{max-width:100%}
+      .about .intro, .about .closing { max-width:100%; padding:0 4px; text-align:left }
+      .about .core { text-align:left }
     }
 
     a:focus{
@@ -145,7 +161,6 @@
 
 <body>
   <main>
-    <!-- Header -->
     <header>
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
       <h1>Aoling Tang</h1>
@@ -163,12 +178,12 @@
           <span>A.Tang@fs.de</span>
         </a>
 
-        <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer" title="ORCID">
+        <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer">
           <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" />
           <span>ORCID</span>
         </a>
 
-        <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+        <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer">
           <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
             <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
           </svg>
@@ -177,19 +192,20 @@
       </div>
     </header>
 
-    <!-- About (with education gently included) -->
     <section class="about" aria-labelledby="about-heading">
       <h2 id="about-heading">About</h2>
 
-      <p>
+      <!-- intro: identity + short education -->
+      <p class="intro">
         Hi, I am <strong>Aoling Tang</strong>, a PhD student in management at Frankfurt School of Finance &amp; Management.
+        I completed my BSc and MSc in Economics at Beihang University.
       </p>
 
-      <p class="emph"><strong>My research interests lie in organizational decision making.</strong></p>
+      <!-- core research (single centered bold line) -->
+      <p class="core">My research interests lie in organizational decision making.</p>
 
-      <p>
-        I completed my BSc and MSc in Economics at Beihang University. I value conversations that help refine research questions and perspectives. Please feel free to contact me.
-      </p>
+      <!-- closing / contact invitation -->
+      <p class="closing">I value conversations that help refine research questions and perspectives. Please feel free to contact me.</p>
     </section>
   </main>
 </body>
