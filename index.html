@@ -9,14 +9,15 @@
     :root{
       --maxw:760px;
       --pad:1.25rem;
-      --text:#0f172a;
-      --muted:#6b7280;
+      --text:#0f172a;       /* 主文本色 */
+      --muted:#55606a;      /* 次要文本色（清晰但不抢戏） */
       --accent:#1766d8;
       --bg:#ffffff;
       --chip-bg:#f3f4f6;
       --border:rgba(15,23,42,.06);
     }
 
+    /* 基础重置 */
     *{box-sizing:border-box}
     html{
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
@@ -30,87 +31,67 @@
       line-height:1.7;
     }
 
-    /* 全局禁止断词（避免 Manage- / ment 被拆） */
-    p, h1, h2, h3, span {
-      hyphens: none !important;
-      word-break: normal !important;
-      overflow-wrap: normal !important;
-    }
-
     main{
       max-width:var(--maxw);
       margin:56px auto 80px;
       padding:0 var(--pad);
     }
 
-    header{
-      text-align:center;
-      margin-bottom:44px;
-    }
+    header{ text-align:center; margin-bottom:44px; }
 
     .photo{
-      width:140px;
-      height:140px;
-      border-radius:50%;
-      object-fit:cover;
-      margin:0 auto 18px;
-      border:2px solid rgba(15,23,42,0.06);
+      width:140px;height:140px;border-radius:50%;object-fit:cover;
+      margin:0 auto 18px;border:2px solid rgba(15,23,42,0.06);
     }
 
-    h1{
-      margin:0;
-      font-size:2.2rem;
-      font-weight:700;
-    }
+    h1{ margin:0; font-size:2.2rem; font-weight:700; }
 
-    .affiliation{
-      margin:10px 0 14px;
-      color:var(--muted);
-    }
+    .affiliation{ margin:10px 0 14px; color:var(--muted); }
 
-    .contact-row{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .contact-row{ display:flex; justify-content:center; gap:10px; flex-wrap:wrap; }
 
     .chip{
-      padding:8px 12px;
-      border-radius:999px;
-      background:var(--chip-bg);
-      border:1px solid var(--border);
-      text-decoration:none;
-      color:inherit;
-      font-size:0.92rem;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
+      padding:8px 12px;border-radius:999px;background:var(--chip-bg);
+      border:1px solid var(--border); text-decoration:none; color:inherit;
+      font-size:0.92rem; display:inline-flex; align-items:center; gap:8px;
     }
 
-    section{
-      margin-top:48px;
-    }
+    section{ margin-top:48px; }
 
     section h2{
-      margin-bottom:16px;
-      font-size:1.05rem;
-      border-bottom:1px solid var(--border);
+      margin:0 0 16px; font-size:1.05rem; border-bottom:1px solid var(--border);
       padding-bottom:6px;
     }
 
-    /* ABOUT: 所有段落块居中（宽度受限），但文本均为左对齐，消除任何缩进与异常居中 */
+    /* =========== 强制清理与稳定化（关键区域） =========== */
+
+    /* 全局禁止自动断词与断裂，以及清除伪元素和缩进 */
+    p, h1, h2, h3, span {
+      hyphens: none !important;
+      word-break: normal !important;
+      overflow-wrap: normal !important;
+      text-indent: 0 !important;
+    }
+
+    /* 清除任何可能的首字母或伪元素干扰 */
+    p::first-letter, p::before, p::after,
+    .about p::first-letter, .about p::before, .about p::after {
+      all: unset;
+    }
+
+    /* About 块：容器居中，文本左对齐（避免单句“居中假象”） */
     .about { }
 
     .about p {
-      max-width:68ch;        /* 控制行宽 */
-      margin:0 auto 16px;    /* 块水平居中，但文字左对齐 */
+      max-width:68ch;        /* 合理行长 */
+      margin:0 auto 16px;    /* 块居中，文本左对齐 */
       text-align:left;
-      text-indent:0;
+      color:var(--text);     /* 默认正文颜色 */
+      text-indent:0;         /* 强制无首行缩进 */
       padding:0;
     }
 
-    /* 保持核心句：左对齐、加粗，但不居中 */
+    /* 核心句（仍加粗，但左对齐、不居中） */
     .about .core {
       font-weight:700;
       margin:0 auto 16px;
@@ -118,27 +99,30 @@
       text-align:left;
       color:var(--text);
       line-height:1.45;
+      text-indent:0;
     }
 
-    /* 结尾邀请稍微弱色，但不是过浅；也左对齐、不缩进 */
+    /* 结尾邀请：颜色稍弱但清晰可读、无缩进 */
     .about .closing {
       color:var(--muted);
       max-width:68ch;
       margin:0 auto 16px;
       text-align:left;
+      text-indent:0;
     }
 
+    /* 防止浏览器自动在英文字之间插入额外空格样式（极端情况） */
+    .about, .about * { letter-spacing: normal; word-spacing: normal; }
+
+    /* 响应式 */
     @media (max-width:640px){
       main{margin:32px auto 56px; padding:0 16px}
       .photo{width:124px;height:124px}
       .about p, .about .core, .about .closing { max-width:100%; padding:0 4px; }
     }
 
-    a:focus{
-      outline:3px solid rgba(23,102,216,0.16);
-      outline-offset:4px;
-      border-radius:8px;
-    }
+    /* 焦点样式（可访问性） */
+    a:focus{ outline:3px solid rgba(23,102,216,0.16); outline-offset:4px; border-radius:8px; }
   </style>
 </head>
 
@@ -150,24 +134,18 @@
       <p class="affiliation">PhD Student in Management<br>Frankfurt School of Finance &amp; Management</p>
 
       <div class="contact-row" aria-label="Contact">
-        <a class="chip" href="mailto:A.Tang@fs.de">
-          <!-- mail SVG -->
-          <svg width="16" height="12" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/>
-            <path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/>
-          </svg>
+        <a class="chip" href="mailto:A.Tang@fs.de" title="Email">
+          <svg width="16" height="12" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/><path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/></svg>
           <span>A.Tang@fs.de</span>
         </a>
 
-        <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer">
+        <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer" title="ORCID">
           <img src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" style="width:16px;height:16px;display:inline-block" />
           <span>ORCID</span>
         </a>
 
-        <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
-          </svg>
+        <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/></svg>
           <span>LinkedIn</span>
         </a>
       </div>
