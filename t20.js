@@ -1,50 +1,43 @@
+// 自动更新页脚年份，并实现移动端菜单与滚动高亮（简易）
 (() => {
-  // Year in footer
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+  // footer year
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
-  const nav = document.querySelector(".chanel-nav");
-  const toggle = document.querySelector(".nav-toggle");
-  const menu = document.getElementById("nav-menu");
-
-  if (nav && toggle && menu) {
-    toggle.addEventListener("click", () => {
-      const isOpen = nav.getAttribute("data-open") === "true";
-      nav.setAttribute("data-open", String(!isOpen));
-      toggle.setAttribute("aria-expanded", String(!isOpen));
+  // mobile nav toggle
+  const nav = document.querySelector('.site-nav');
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.getElementById('nav-menu');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', String(!open));
+      toggle.setAttribute('aria-expanded', String(!open));
     });
-
-    // Close menu after clicking a link (mobile)
-    menu.addEventListener("click", (e) => {
-      const target = e.target;
-      if (target instanceof HTMLAnchorElement && nav.getAttribute("data-open") === "true") {
-        nav.setAttribute("data-open", "false");
-        toggle.setAttribute("aria-expanded", "false");
-      }
-    });
+    // close on link click (mobile)
+    if (menu) {
+      menu.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A') {
+          nav.setAttribute('data-open', 'false');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
   }
 
-  // Active link highlight while scrolling
-  const navLinks = Array.from(document.querySelectorAll(".nav-menu a[href^='#']"));
-  const sections = navLinks
-    .map((a) => document.querySelector(a.getAttribute("href")))
-    .filter(Boolean);
-
-  if ("IntersectionObserver" in window && navLinks.length && sections.length) {
-    const linkBySection = new Map(sections.map((sec, i) => [sec, navLinks[i]]));
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          navLinks.forEach((a) => a.classList.remove("active"));
-          linkBySection.get(entry.target)?.classList.add("active");
+  // section highlight while scrolling
+  const links = Array.from(document.querySelectorAll('.nav-menu a[href^="#"]'));
+  const sections = links.map(a => document.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window && sections.length) {
+    const map = new Map(sections.map((s,i) => [s, links[i]]));
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(ent => {
+        if (ent.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          map.get(ent.target)?.classList.add('active');
         }
-      },
-      { rootMargin: "-35% 0px -55% 0px", threshold: 0.01 }
-    );
-
-    sections.forEach((sec) => observer.observe(sec));
+      });
+    }, {rootMargin: '-35% 0px -55% 0px', threshold: 0.01});
+    sections.forEach(s => obs.observe(s));
   }
 })();
