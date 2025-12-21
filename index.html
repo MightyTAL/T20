@@ -123,18 +123,20 @@
       border-bottom:1px solid var(--border);
     }
 
-    /* About: centered block but text left-aligned for readability */
+    /* ---------------- About: 使用“最后改良版”字体设置 ---------------- */
     .about p{
       margin:0 0 16px;
-      max-width:62ch;
+      max-width:62ch;              /* 改良版：稳定且易读的行宽 */
       margin-left:auto;
       margin-right:auto;
       text-align:left;
       color:var(--text);
+      font-size:1rem;              /* 改良版字号 */
+      line-height:1.65;            /* 稍微压紧，阅读舒适 */
     }
 
     .about p:last-of-type{
-      color:var(--muted);
+      color:var(--muted);          /* 改良版：末段次要色（清晰但不抢戏） */
       font-size:0.98rem;
     }
 
@@ -145,6 +147,8 @@
       margin:10px 0;
       text-align:left;
       color:var(--text);
+      font-size:1rem;
+      line-height:1.65;
     }
 
     /* small screens */
