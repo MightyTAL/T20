@@ -6,112 +6,110 @@
   <title>Aoling Tang</title>
 
   <style>
-    /* ===== 全局基础设置：极简 & 稳定 ===== */
-    html {
+    :root{
+      --text:#111;
+      --muted:#555;
+      --bg:#ffffff;
+      --border:#e6e6e6;
+    }
+
+    html{
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
     }
 
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ffffff;
-      color: #111111;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* 禁止任何自动断词或缩进 */
-    p, h1, h2, span {
-      hyphens: none;
-      word-break: normal;
-      overflow-wrap: normal;
-      text-indent: 0;
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-size:17px;
+      line-height:1.7;
     }
 
     /* 页面主体 */
-    main {
-      max-width: 760px;
-      margin: 60px auto;
-      padding: 0 20px;
+    .page{
+      max-width:860px;
+      margin:70px auto;
+      padding:0 24px;
     }
 
-    /* 顶部信息区 */
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      margin-bottom: 36px;
+    /* 头部 */
+    .header{
+      display:flex;
+      gap:36px;
+      align-items:center;
+      margin-bottom:48px;
     }
 
-    .photo {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      object-fit: cover;
+    .photo{
+      width:160px;
+      height:160px;
+      border-radius:50%;
+      object-fit:cover;
     }
 
-    .header-text h1 {
-      margin: 0 0 6px 0;
-      font-size: 2.2rem;
-      font-weight: 700;
+    .header-text h1{
+      margin:0 0 10px 0;
+      font-size:2.4rem;
+      font-weight:700;
     }
 
-    .affiliation {
-      margin: 0 0 10px 0;
-      font-size: 1rem;
+    .affiliation{
+      margin:0 0 12px 0;
+      font-size:1.05rem;
+      color:var(--muted);
     }
 
-    .links a {
-      display: inline-block;
-      margin-right: 12px;
-      text-decoration: none;
-      color: #111111;
-      font-size: 0.95rem;
+    .links a{
+      margin-right:16px;
+      font-size:0.95rem;
+      color:var(--text);
+      text-decoration:none;
     }
 
-    .links a:hover {
-      text-decoration: underline;
+    .links a:hover{
+      text-decoration:underline;
     }
 
-    /* 分区标题 */
-    h2 {
-      font-size: 1.1rem;
-      font-weight: 600;
-      margin: 36px 0 16px 0;
+    /* About */
+    .section-title{
+      font-size:1.3rem;
+      font-weight:600;
+      margin:0 0 20px 0;
     }
 
-    /* About 段落 */
-    .about p {
-      margin: 0 0 14px 0;
-      text-align: left;
+    .about{
+      max-width:720px;
     }
 
-    /* 仅描黑需要描黑的内容 */
-    .name {
-      font-weight: 700;
+    .about p{
+      margin:0 0 18px 0;
     }
 
-    .research {
-      font-weight: 700;
+    .name{
+      font-weight:700;
     }
 
-    /* 响应式（手机） */
-    @media (max-width: 640px) {
-      .header {
-        flex-direction: column;
-        align-items: flex-start;
+    .research{
+      font-weight:700;
+    }
+
+    /* 响应式 */
+    @media (max-width:700px){
+      .header{
+        flex-direction:column;
+        align-items:flex-start;
       }
 
-      .photo {
-        width: 120px;
-        height: 120px;
+      .photo{
+        width:140px;
+        height:140px;
       }
     }
   </style>
 </head>
 
 <body>
-  <main>
+  <div class="page">
     <!-- Header -->
     <div class="header">
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
@@ -119,10 +117,11 @@
       <div class="header-text">
         <h1><span class="name">Aoling Tang</span></h1>
         <p class="affiliation">
-          PhD student in management, Frankfurt School of Finance &amp; Management
+          PhD student in management<br>
+          Frankfurt School of Finance &amp; Management
         </p>
         <div class="links">
-          <a href="mailto:A.Tang@fs.de">A.Tang@fs.de</a>
+          <a href="mailto:A.Tang@fs.de">Email</a>
           <a href="https://orcid.org/0009-0009-1643-0025" target="_blank">ORCID</a>
           <a href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank">LinkedIn</a>
         </div>
@@ -130,8 +129,9 @@
     </div>
 
     <!-- About -->
-    <h2>About</h2>
     <div class="about">
+      <h2 class="section-title">About</h2>
+
       <p>
         Hi, I am <span class="name">Aoling Tang</span>, a PhD student in management at Frankfurt School of Finance &amp; Management.
         I completed my BSc and MSc in Economics at Beihang University.
@@ -146,6 +146,6 @@
         Please feel free to contact me.
       </p>
     </div>
-  </main>
+  </div>
 </body>
 </html>
