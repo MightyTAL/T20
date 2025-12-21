@@ -9,169 +9,147 @@
 
   <style>
     :root{
-      --content-width:820px;
-      --gutter:1.125rem;
+      --maxw:760px;
+      --pad:1.25rem;
+      --text:#0f172a;
       --muted:#6b7280;
       --accent:#1f6feb;
-      --surface:#f7f8fa;
-      --bg:#ffffff;
-      --radius:12px;
+      --border:rgba(15,23,42,.06);
+      --chip-bg:#f3f4f6;
     }
 
     *{box-sizing:border-box}
     html{
-      font-family:Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
+      font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
       -webkit-font-smoothing:antialiased;
     }
     body{
       margin:0;
-      color:#0f172a;
-      background:var(--bg);
+      color:var(--text);
+      background:#fff;
       font-size:17px;
       line-height:1.7;
     }
 
     main{
-      max-width:var(--content-width);
-      margin:40px auto;
-      padding:0 var(--gutter) 60px;
+      max-width:var(--maxw);
+      margin:56px auto 80px;
+      padding:0 var(--pad);
     }
 
     /* Header */
-    .header{
-      display:grid;
-      grid-template-columns:148px 1fr;
-      gap:28px;
-      align-items:center;
-      margin-bottom:28px;
+    header{
+      text-align:center;
+      margin-bottom:44px;
     }
 
     .photo{
-      width:148px;
-      height:148px;
-      border-radius:14px;
+      width:140px;
+      height:140px;
+      border-radius:999px;
       object-fit:cover;
-      background:var(--surface);
-      box-shadow:0 10px 30px rgba(15,23,42,0.06);
-      border:1px solid rgba(15,23,42,0.03);
+      background:#f7f8fa;
+      margin-bottom:18px;
     }
 
     h1{
-      margin:0 0 6px 0;
-      font-size:2.1rem;
-      line-height:1.05;
-      letter-spacing:-0.2px;
+      margin:0;
+      font-size:2.2rem;
       font-weight:700;
+      letter-spacing:-0.3px;
     }
 
     .affiliation{
-      margin:0;
+      margin:10px 0 14px;
       color:var(--muted);
       font-size:0.98rem;
+      line-height:1.45;
     }
 
-    /* Contact row */
+    /* Contact chips */
     .contact-row{
-      margin-top:12px;
-      display:inline-flex;
-      gap:12px;
-      align-items:center;
+      display:flex;
+      justify-content:center;
+      gap:10px;
       flex-wrap:wrap;
     }
 
-    .icon-link{
+    .chip{
       display:inline-flex;
       align-items:center;
-      gap:10px;
-      text-decoration:none;
+      gap:8px;
+      padding:6px 12px;
+      border-radius:999px;
+      background:var(--chip-bg);
       color:inherit;
-      font-size:0.95rem;
-      padding:6px 8px;
-      border-radius:10px;
+      text-decoration:none;
+      font-size:0.92rem;
+      border:1px solid var(--border);
     }
-    .icon-link:hover{
-      background:rgba(31,111,235,0.06);
+
+    .chip:hover{
+      background:#e5e7eb;
       color:var(--accent);
     }
 
     .icon{
-      width:18px;
-      height:18px;
-      display:inline-block;
-      flex:0 0 18px;
+      width:16px;
+      height:16px;
+      flex:0 0 16px;
     }
 
     /* Sections */
     section{
-      margin-top:34px;
-      padding-top:6px;
-      border-top:1px solid rgba(15,23,42,0.03);
+      margin-top:48px;
     }
 
     section h2{
-      margin:0 0 10px 0;
-      font-size:1.05rem;
+      margin:0 0 14px;
+      font-size:1.1rem;
       font-weight:600;
-      letter-spacing:0.2px;
+      border-bottom:1px solid var(--border);
+      padding-bottom:6px;
     }
 
     /* About */
     .about p{
-      margin:0 0 12px 0;
+      margin:0 0 14px;
     }
-    .about .emph{
+
+    .about strong{
       font-weight:600;
     }
 
     /* Education */
-    .edu-list{
-      margin:10px 0 0 0;
-      padding:0;
+    .education ul{
       list-style:none;
-      display:grid;
-      gap:12px;
+      padding:0;
+      margin:0;
     }
 
-    .edu-item{
-      display:flex;
-      gap:14px;
-      padding:12px;
-      border-radius:10px;
-      background:linear-gradient(180deg,#f7f8fa,#ffffff);
-      border:1px solid rgba(15,23,42,0.03);
+    .education li{
+      margin-bottom:16px;
     }
 
-    .edu-left{
-      min-width:46%;
-      max-width:46%;
+    .school{
       font-weight:600;
-      font-size:0.98rem;
-    }
-
-    .edu-right{
-      color:var(--muted);
-      font-size:0.95rem;
-      line-height:1.45;
     }
 
     .degree{
-      display:inline-block;
-      margin-top:4px;
-      font-size:0.92rem;
+      color:var(--muted);
+      font-size:0.95rem;
     }
 
-    @media (max-width:720px){
-      main{margin:22px auto;padding:0 18px 40px}
-      .header{grid-template-columns:1fr;text-align:center}
-      .photo{margin:0 auto}
-      .edu-item{flex-direction:column}
-      .edu-left{max-width:100%;min-width:100%}
+    /* Responsive */
+    @media (max-width:640px){
+      body{font-size:16.5px}
+      main{margin-top:36px}
     }
 
     a:focus{
-      outline:3px solid rgba(31,111,235,0.18);
+      outline:3px solid rgba(31,111,235,.2);
       outline-offset:3px;
-      border-radius:8px;
+      border-radius:6px;
     }
   </style>
 </head>
@@ -179,78 +157,70 @@
 <body>
   <main>
     <!-- Header -->
-    <header class="header">
+    <header>
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
-      <div>
-        <h1>Aoling Tang</h1>
-        <p class="affiliation">
-          PhD Student in Management<br>
-          Frankfurt School of Finance &amp; Management
-        </p>
+      <h1>Aoling Tang</h1>
+      <p class="affiliation">
+        PhD Student in Management<br>
+        Frankfurt School of Finance &amp; Management
+      </p>
 
-        <!-- Contact row -->
-        <div class="contact-row">
-          <!-- Email -->
-          <a class="icon-link" href="mailto:A.Tang@fs.de">
-            <svg class="icon" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-              <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/>
-              <path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/>
-            </svg>
-            <span>A.Tang@fs.de</span>
-          </a>
+      <div class="contact-row">
+        <!-- Email -->
+        <a class="chip" href="mailto:A.Tang@fs.de">
+          <svg class="icon" viewBox="0 0 20 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 2C1 1.44772 1.44772 1 2 1H18C18.5523 1 19 1.44772 19 2V12C19 12.5523 18.5523 13 18 13H2C1.44772 13 1 12.5523 1 12V2Z" stroke="currentColor" stroke-width="1.2"/>
+            <path d="M2 3.2L10 8.2L18 3.2" stroke="currentColor" stroke-width="1.2"/>
+          </svg>
+          A.Tang@fs.de
+        </a>
 
-          <!-- ORCID -->
-          <a class="icon-link" href="https://orcid.org/0009-0009-1643-0025"
-             target="_blank" rel="me noopener noreferrer">
-            <img class="icon"
-                 src="https://orcid.org/sites/default/files/images/orcid_16x16.png"
-                 alt="ORCID icon" />
-            <span>0009-0009-1643-0025</span>
-          </a>
+        <!-- ORCID -->
+        <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="me noopener noreferrer">
+          <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID icon" />
+          ORCID
+        </a>
 
-          <!-- LinkedIn -->
-          <a class="icon-link"
-             href="https://www.linkedin.com/in/aoling-tang-00170439b?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
-             target="_blank" rel="noopener noreferrer">
-            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-              <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
-            </svg>
-            <span>LinkedIn</span>
-          </a>
-        </div>
+        <!-- LinkedIn -->
+        <a class="chip" href="https://www.linkedin.com/in/aoling-tang-00170439b" target="_blank" rel="noopener noreferrer">
+          <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M4.98 3.5C4.98 4.88 3.86 6 2.49 6 1.12 6 0 4.88 0 3.5 0 2.12 1.12 1 2.49 1 3.86 1 4.98 2.12 4.98 3.5zM0.5 23.5h4V7.5h-4v16zM8.5 7.5h3.8v2.2h.05c.53-1 1.83-2.2 3.77-2.2 4.03 0 4.78 2.65 4.78 6.1v9.9h-4v-8.8c0-2.1-.04-4.8-2.92-4.8-2.92 0-3.37 2.28-3.37 4.6v9h-4v-16z"/>
+          </svg>
+          LinkedIn
+        </a>
       </div>
     </header>
 
     <!-- About -->
     <section class="about">
       <h2>About</h2>
-      <p>Hi, I am <strong>Aoling Tang</strong>, a PhD student in management at Frankfurt School of Finance &amp; Management.</p>
-      <p><span class="emph">My current research focuses on organizational decision making.</span> I study how organizations use data and analytics to make decisions under uncertainty and how these decision processes affect firm outcomes.</p>
-      <p>If you would like to discuss research or collaboration, please reach out by email.</p>
+      <p>
+        Hi, I am <strong>Aoling Tang</strong>, a PhD student in management at Frankfurt School of Finance &amp; Management.
+      </p>
+      <p>
+        <strong>My current research focuses on organizational decision making.</strong>
+        I study how organizations use data and analytics to make decisions under uncertainty and how these decision processes shape firm outcomes.
+      </p>
+      <p>
+        Feel free to contact me by email.
+      </p>
     </section>
 
     <!-- Education -->
     <section class="education">
       <h2>Education</h2>
-      <ul class="edu-list">
-        <li class="edu-item">
-          <div class="edu-left">Frankfurt School of Finance &amp; Management</div>
-          <div class="edu-right">
-            <div class="degree">PhD in Management</div>
-            <div>09/2025 – present</div>
-          </div>
+      <ul>
+        <li>
+          <div class="school">Frankfurt School of Finance &amp; Management</div>
+          <div class="degree">PhD in Management, 2025–present</div>
         </li>
-        <li class="edu-item">
-          <div class="edu-left">Beihang University, China</div>
-          <div class="edu-right">
-            <div class="degree">MSc in Economics</div>
-          </div>
+        <li>
+          <div class="school">Beihang University, China</div>
+          <div class="degree">MSc in Economics</div>
         </li>
-        <li class="edu-item">
-          <div class="edu-left">Beihang University, China</div>
-          <div class="edu-right">
-            <div class="degree">BSc in Economics</div>
-          </div>
+        <li>
+          <div class="school">Beihang University, China</div>
+          <div class="degree">BSc in Economics</div>
         </li>
       </ul>
     </section>
