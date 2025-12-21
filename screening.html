@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Screening function — Aoling Tang</title>
+
+  <style>
+    :root{
+      --page-max:900px;
+      --content-max:720px;
+      --pad:28px;
+      --text:#0f172a;
+      --muted:#6b7280;
+      --accent:#1766d8;
+      --bg:#ffffff;
+      --border:rgba(15,23,42,.06);
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{
+      font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
+      -webkit-font-smoothing:antialiased;
+    }
+    body{
+      background:var(--bg);
+      color:var(--text);
+      font-size:17px;
+      line-height:1.7;
+    }
+
+    /* Top navigation (same as About page) */
+    .nav{
+      max-width:var(--page-max);
+      margin:28px auto 0;
+      padding:0 var(--pad);
+      display:flex;
+      gap:28px;
+      font-size:1rem;
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--text);
+      padding-bottom:4px;
+      border-bottom:2px solid transparent;
+    }
+    .nav a:hover,
+    .nav a.active{
+      border-bottom-color:var(--text);
+      font-weight:600;
+    }
+
+    main{
+      max-width:var(--page-max);
+      margin:56px auto;
+      padding:0 var(--pad);
+    }
+
+    section{
+      max-width:var(--content-max);
+    }
+
+    h1{
+      font-size:2.2rem;
+      font-weight:700;
+      margin-bottom:20px;
+    }
+
+    p{
+      font-size:1rem;
+      margin-bottom:28px;
+    }
+
+    /* image */
+    .figure{
+      margin-top:24px;
+    }
+
+    .figure img{
+      width:100%;
+      height:auto;
+      border:1px solid var(--border);
+      border-radius:6px;
+    }
+
+    .caption{
+      font-size:0.95rem;
+      color:var(--muted);
+      margin-top:8px;
+    }
+
+    @media (max-width:700px){
+      main{margin:36px auto; padding:0 18px}
+      h1{font-size:1.8rem}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html">About</a>
+    <a href="screening.html" class="active">Screening function</a>
+  </nav>
+
+  <main>
+    <section>
+      <h1>Screening function</h1>
+
+      <p>
+        This semester, I am particularly interested in the screening function in organizational decision making.
+        Screening refers to the rules or mechanisms organizations use to filter, rank, or select options before deeper
+        evaluation, especially when information is incomplete and decisions must be made under uncertainty.
+      </p>
+
+      <div class="figure">
+        <!-- 替换为你的图片文件名 -->
+        <img src="screening.png" alt="Illustration of a screening function" />
+        <div class="caption">
+          An illustrative example of a screening function.
+        </div>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>
