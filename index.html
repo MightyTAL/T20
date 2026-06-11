@@ -22,10 +22,12 @@
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     html{
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
       scroll-behavior:smooth;
     }
+
     body{
       background:var(--bg);
       color:var(--text);
@@ -42,13 +44,18 @@
       gap:28px;
       font-size:1rem;
     }
+
     .nav a{
       text-decoration:none;
       color:var(--text);
       padding-bottom:4px;
       border-bottom:2px solid transparent;
     }
-    .nav a:hover{ border-bottom-color:var(--text) }
+
+    .nav a:hover{
+      border-bottom-color:var(--text);
+    }
+
     .nav a.active{
       border-bottom-color:var(--text);
       font-weight:600;
@@ -110,9 +117,15 @@
       font-size:0.98rem;
       border:1px solid var(--border);
     }
-    .chip:hover{ background:rgba(23,102,216,0.08) }
 
-    .icon{ width:18px; height:18px }
+    .chip:hover{
+      background:rgba(23,102,216,0.08);
+    }
+
+    .icon{
+      width:18px;
+      height:18px;
+    }
 
     section{
       margin-top:72px;
@@ -139,15 +152,39 @@
     }
 
     @media (max-width:700px){
-      .header{ flex-direction:column; align-items:flex-start }
-      .photo{ width:124px; height:124px }
-      h1{ font-size:2rem }
-      .nav{ padding:0 18px; gap:18px }
-      main{ padding:0 18px }
-      section{ margin-top:48px }
+      .header{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+
+      .photo{
+        width:124px;
+        height:124px;
+      }
+
+      h1{
+        font-size:2rem;
+      }
+
+      .nav{
+        padding:0 18px;
+        gap:18px;
+      }
+
+      main{
+        padding:0 18px;
+      }
+
+      section{
+        margin-top:48px;
+      }
     }
 
-    a:focus{ outline:3px solid rgba(23,102,216,0.14); outline-offset:4px; border-radius:6px }
+    a:focus{
+      outline:3px solid rgba(23,102,216,0.14);
+      outline-offset:4px;
+      border-radius:6px;
+    }
   </style>
 </head>
 
@@ -162,8 +199,10 @@
     <!-- Header -->
     <header class="header">
       <img src="your-photo.jpg" alt="Portrait of Aoling Tang" class="photo" />
+
       <div>
         <h1>Aoling Tang</h1>
+
         <div class="affiliation">
           PhD Student in Management<br>
           Frankfurt School of Finance &amp; Management
@@ -178,10 +217,16 @@
             <span>A.Tang@fs.de</span>
           </a>
 
-          <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" title="ORCID">
+          <a class="chip" href="https://orcid.org/0009-0009-1643-0025" target="_blank" rel="noopener noreferrer" title="ORCID">
             <img class="icon" src="https://orcid.org/sites/default/files/images/orcid_16x16.png" alt="ORCID" />
             <span>ORCID</span>
           </a>
+
+          <a class="chip" href="https://www.linkedin.com/in/aoling-tang-9a493b40a" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+            <svg class="icon" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20.447 20.452H16.89V14.88C16.89 13.552 16.866 11.842 15.039 11.842C13.186 11.842 12.902 13.29 12.902 14.785V20.452H9.345V9H12.759V10.564H12.807C13.282 9.664 14.443 8.714 16.173 8.714C19.777 8.714 20.447 11.086 20.447 14.17V20.452ZM5.337 7.433C4.196 7.433 3.277 6.509 3.277 5.371C3.277 4.234 4.196 3.31 5.337 3.31C6.474 3.31 7.398 4.234 7.398 5.371C7.398 6.509 6.474 7.433 5.337 7.433ZM7.116 20.452H3.554V9H7.116V20.452ZM22.225 0H1.771C0.792 0 0 0.774 0 1.729V22.271C0 23.227 0.792 24 1.771 24H22.225C23.2 24 24 23.227 24 22.271V1.729C24 0.774 23.2 0 22.225 0Z"/>
+            </svg>
+            <span>LinkedIn</span>
           </a>
         </div>
       </div>
@@ -198,6 +243,7 @@
 
       <p class="emph">
         My research interests lie in organizational decision making, motivated by the broad research question of "how do people make decisions and why does it matter?"
+        I'm very interested in screening and learning problems!
       </p>
 
       <p>
