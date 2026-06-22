@@ -157,6 +157,65 @@
       text-decoration:none;
     }
 
+    /* Research timeline */
+    .timeline{
+      max-width:var(--content-max);
+      margin-top:30px;
+      padding-left:30px;
+      border-left:2px solid var(--border);
+    }
+
+    .timeline-item{
+      position:relative;
+      margin-bottom:32px;
+      padding-left:24px;
+    }
+
+    .timeline-item:last-child{
+      margin-bottom:0;
+    }
+
+    .timeline-item::before{
+      content:"";
+      position:absolute;
+      left:-37px;
+      top:8px;
+      width:12px;
+      height:12px;
+      border-radius:50%;
+      background:var(--accent);
+      border:3px solid var(--bg);
+      box-shadow:0 0 0 2px var(--border);
+    }
+
+    .timeline-term{
+      font-size:0.92rem;
+      color:var(--accent);
+      font-weight:700;
+      margin-bottom:4px;
+    }
+
+    .timeline-content h3{
+      font-size:1.08rem;
+      font-weight:700;
+      margin-bottom:6px;
+    }
+
+    .timeline-content p{
+      margin-bottom:0;
+    }
+
+    .replaced{
+      color:var(--muted);
+      text-decoration:line-through;
+      text-decoration-thickness:1.5px;
+    }
+
+    .arrow-note{
+      color:var(--muted);
+      font-size:0.95rem;
+    }
+
     /* Figures */
     .figure{
       margin-top:24px;
@@ -189,18 +248,6 @@
       color:var(--muted);
       margin-top:8px;
       line-height:1.5;
-    }
-
-    /* Current interest layout */
-    .current-layout{
-      display:grid;
-      grid-template-columns:minmax(280px, 0.85fr) minmax(420px, 1.15fr);
-      gap:38px;
-      align-items:start;
-    }
-
-    .current-layout .figure{
-      margin-top:0;
     }
 
     /* Cards */
@@ -367,13 +414,8 @@
     }
 
     @media (max-width:960px){
-      .current-layout,
       .replication-intro{
         grid-template-columns:1fr;
-      }
-
-      .current-layout .figure{
-        margin-top:8px;
       }
 
       .figure-grid-3{
@@ -422,6 +464,18 @@
       .reading-card{
         padding:16px 17px;
       }
+
+      .timeline{
+        padding-left:24px;
+      }
+
+      .timeline-item{
+        padding-left:20px;
+      }
+
+      .timeline-item::before{
+        left:-31px;
+      }
     }
   </style>
 </head>
@@ -435,29 +489,45 @@
   </nav>
 
   <main>
-    <!-- Current research interest -->
+    <!-- Research timeline -->
     <section id="current-interest">
-      <div class="current-layout">
-        <div class="text-block">
-          <h1>Research</h1>
+      <div class="text-block">
+        <h1>Research</h1>
 
-          <p>
-            This semester, I am particularly interested in the screening function in organizational decision making.
-          </p>
+        <p>
+          I use this page to document how my research interests develop during my PhD.
+        </p>
 
-          <div class="section-links" aria-label="Sections on this page">
-            <a href="#current-interest">Current Interest</a>
-            <a href="#replication-notes">Replication Notes</a>
-            <a href="#selected-readings">Selected Readings</a>
+        <div class="section-links" aria-label="Sections on this page">
+          <a href="#current-interest">Research Timeline</a>
+          <a href="#replication-notes">Replication Notes</a>
+          <a href="#selected-readings">Selected Readings</a>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-term">Term 1</div>
+          <div class="timeline-content">
+            <h3>
+              <span class="replaced">Data-driven decision making under uncertainty</span>
+              <span class="arrow-note"> → Screening</span>
+            </h3>
+            <p>
+              I started with a broad interest in data-driven decision making under uncertainty,
+              and gradually narrowed my attention to the screening function in organizational decision making.
+            </p>
           </div>
         </div>
 
-        <div class="figure">
-          <a href="screening.png" target="_blank" rel="noopener noreferrer" title="Open image">
-            <img src="screening.png" alt="Illustration of a screening function" />
-          </a>
-          <div class="caption">
-            An illustrative example of a screening function. Click the figure to open it in a larger view.
+        <div class="timeline-item">
+          <div class="timeline-term">Term 2</div>
+          <div class="timeline-content">
+            <h3>Screening + Learning</h3>
+            <p>
+              I am currently thinking about how screening and learning interact:
+              how organizations select, filter, evaluate, and update under uncertainty.
+            </p>
           </div>
         </div>
       </div>
@@ -746,14 +816,59 @@
           </div>
 
           <div class="meta">
-            Michael Christensen and Thorbjørn Knudsen
+            Michael Christensen and Thorbjørn Knudsen<br>
+            Management Science, 56(1), 71–89, 2010
           </div>
+
+          <p class="reading-doi">
+            DOI:
+            <a href="https://doi.org/10.1287/mnsc.1090.1096" target="_blank" rel="noopener noreferrer">
+              10.1287/mnsc.1090.1096
+            </a>
+          </p>
         </div>
 
         <div class="reading-card">
           <div class="paper-title">
             Context and Aggregation: An Experimental Study of Bias and Discrimination in Organizational Decisions
           </div>
+
+          <div class="meta">
+            Michael Christensen, Christian M. Dahl, Thorbjørn Knudsen, and Massimo Warglien<br>
+            Organization Science, 34(6), 2163–2181, 2023
+          </div>
+
+          <p class="reading-doi">
+            DOI:
+            <a href="https://doi.org/10.1287/orsc.2021.1502" target="_blank" rel="noopener noreferrer">
+              10.1287/orsc.2021.1502
+            </a>
+          </p>
+        </div>
+
+        <div class="reading-card">
+          <div class="paper-title">
+            Committees, Hierarchies and Polyarchies
+          </div>
+
+          <div class="meta">
+            Raaj Kumar Sah and Joseph E. Stiglitz<br>
+            The Economic Journal, 98(391), 451–470, 1988
+          </div>
+
+          <p class="reading-doi">
+            DOI:
+            <a href="https://doi.org/10.2307/2233377" target="_blank" rel="noopener noreferrer">
+              10.2307/2233377
+            </a>
+          </p>
+
+          <p class="reading-doi">
+            Notes:
+            <a href="https://www.dropbox.com/scl/fi/c7b696ouvrycwfp7j7uc3/some-notes.pdf?rlkey=cjsv6ajl635b9l7ticulb5uvq&amp;st=cc6eoaqn&amp;dl=0" target="_blank" rel="noopener noreferrer">
+              My notes
+            </a>
+          </p>
         </div>
 
         <div class="reading-card">
@@ -763,7 +878,7 @@
 
           <div class="meta">
             Henning Piezunka, Vikas A. Aggarwal, and Hart E. Posen<br>
-            Organization Science, 33(3), 1094–1115
+            Organization Science, 33(3), 1094–1115, 2022
           </div>
 
           <p class="reading-doi">
