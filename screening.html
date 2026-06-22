@@ -129,6 +129,7 @@
       border:1px solid var(--border);
       border-radius:6px;
       box-shadow:var(--shadow);
+      background:#ffffff;
     }
 
     .caption{
@@ -180,6 +181,36 @@
       font-size:1.04rem;
       line-height:1.45;
       margin-bottom:6px;
+    }
+
+    .replication-meta{
+      color:var(--muted);
+      font-size:0.96rem;
+      margin-bottom:14px;
+    }
+
+    .link-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
+    .button-link{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 13px;
+      border-radius:999px;
+      background:var(--chip-bg);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-size:0.93rem;
+      text-decoration:none;
+    }
+
+    .button-link:hover{
+      background:rgba(23,102,216,0.08);
+      text-decoration:none;
     }
 
     @media (max-width:700px){
@@ -246,107 +277,109 @@
         questions are translated into models, assumptions, simulations, empirical designs, and interpretations.
       </p>
 
-      <p>
-        This section documents selected replication notes, coding exercises, and reflections from my learning
-        process. These notes are not intended as formal publications, but as part of my ongoing development as a researcher.
-      </p>
-
       <div class="card">
-        <h3>Current replication focus</h3>
+        <h3>Replication 1: March (1991) Figure 1</h3>
+
+        <div class="replication-meta">
+          Original paper:<br>
+          March, J. G. (1991). Exploration and exploitation in organizational learning.
+          <em>Organization Science</em>, 2(1), 71–87.
+        </div>
 
         <p>
-          I am currently interested in papers related to organizational learning, mutual learning, performance feedback,
-          exploration, and decision making. My goal is to understand how model assumptions shape theoretical insights
-          and how computational approaches can be used to study organizational processes.
+          This replication revisits Figure 1 in March's mutual-learning model. The figure illustrates a central
+          idea in organizational learning: rapid socialization may help individuals align with the organizational
+          code in the short run, but it can reduce long-run organizational knowledge by eliminating the diversity
+          from which the code learns.
         </p>
 
+        <div class="link-row">
+          <a class="button-link" href="https://doi.org/10.1287/orsc.2.1.71" target="_blank" rel="noopener noreferrer">
+            Original paper
+          </a>
+
+          <a class="button-link" href="March_1991_replication_report.docx" target="_blank" rel="noopener noreferrer">
+            Replication report
+          </a>
+        </div>
+
         <div class="tag-row">
+          <span class="tag">exploration</span>
+          <span class="tag">exploitation</span>
           <span class="tag">organizational learning</span>
           <span class="tag">mutual learning</span>
-          <span class="tag">performance feedback</span>
           <span class="tag">simulation</span>
-          <span class="tag">decision making</span>
+        </div>
+
+        <div class="figure">
+          <img src="1.png" alt="Paper-aligned replication of March 1991 Figure 1" />
+          <div class="caption">
+            Paper-aligned replication of March (1991) Figure 1.
+          </div>
+        </div>
+
+        <div class="figure">
+          <img src="2.png" alt="Modified replication of March 1991 Figure 1" />
+          <div class="caption">
+            Modified replication with realized actions and gradual socialization.
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Papers I like -->
-    <section id="papers-i-like">
-      <h2>Papers I Like</h2>
-
-      <p>
-        I keep a small list of papers that shape my current thinking about organizational learning,
-        mutual learning, feedback, exploration, and decision making. Some of them may become replication
-        exercises, reading notes, or starting points for future research ideas.
-      </p>
-
+    <!-- Selected readings -->
+    <section id="selected-readings">
+      <h2>Selected Readings</h2>
       <div class="card">
         <div class="paper-title">
           The Impact of Learning Mode and Speed on Mutual Learning
         </div>
 
-        <div class="meta">
-          Jerker Denrell, Michael Christensen, Thorbjørn Knudsen, and Chengwei Liu<br>
-          Academy of Management Review, published online 7 August 2025<br>
-          Accepted by Richard Makadok
-        </div>
-
-        <p>
-          I am interested in this paper because it connects learning processes, organizational adaptation,
-          and the dynamics of mutual learning. It is closely related to my broader interest in how people
-          and organizations make decisions, learn from information, and respond to uncertainty over time.
-        </p>
-
-        <p>
-          DOI:
-          <a href="https://doi.org/10.5465/amr.2023.0173" target="_blank" rel="noopener noreferrer">
-            10.5465/amr.2023.0173
-          </a>
-        </p>
-
-        <div class="tag-row">
-          <span class="tag">mutual learning</span>
-          <span class="tag">learning mode</span>
-          <span class="tag">learning speed</span>
-          <span class="tag">organizational adaptation</span>
-        </div>
+      <div class="meta">
+        Jerker Denrell, Michael Christensen, Thorbjørn Knudsen, and Chengwei Liu<br>
+        Academy of Management Review, published online 7 August 2025<br>
       </div>
-
+      
+      <p>
+        DOI:
+        <a href="https://doi.org/10.5465/amr.2023.0173" target="_blank" rel="noopener noreferrer">
+          10.5465/amr.2023.0173
+        </a>
+      </p>
+      
+      <div class="tag-row">
+        <span class="tag">mutual learning</span>
+        <span class="tag">learning mode</span>
+        <span class="tag">learning speed</span>
+        <span class="tag">organizational adaptation</span>
+      </div>
+      </div>
+      
       <div class="card">
-        <div class="paper-title">
-          Fast Learning and Sustained Exploration: The Role of Timely Performance Feedback
-        </div>
-
-        <div class="meta">
-          Jerker Denrell, Joonas Luukkonen, Nick Chater, and Chengwei Liu<br>
-          Strategic Management Journal, in press<br>
-          Available online 27 April 2026
-        </div>
-
-        <p>
-          I am interested in this paper because it examines how timely performance feedback changes the relationship
-          between learning speed and exploration. It speaks directly to questions about how organizations learn from
-          information, how individuals choose whom to imitate, and how fast learning can sometimes support rather than
-          undermine sustained exploration.
-        </p>
-
-        <p>
-          DOI:
-          <a href="https://doi.org/10.1002/smj.70098" target="_blank" rel="noopener noreferrer">
-            10.1002/smj.70098
-          </a>
-        </p>
-
-        <div class="tag-row">
-          <span class="tag">fast learning</span>
-          <span class="tag">performance feedback</span>
-          <span class="tag">exploration</span>
-          <span class="tag">organizational learning</span>
-          <span class="tag">target diversity</span>
-        </div>
+      <div class="paper-title">
+        Fast Learning and Sustained Exploration: The Role of Timely Performance Feedback
+      </div>
+      
+      <div class="meta">
+        Jerker Denrell, Joonas Luukkonen, Nick Chater, and Chengwei Liu<br>
+        Strategic Management Journal, in press<br>
+        Available online 27 April 2026
+      </div>
+      <p>
+        DOI:
+        <a href="https://doi.org/10.1002/smj.70098" target="_blank" rel="noopener noreferrer">
+          10.1002/smj.70098
+        </a>
+      </p>
+      <div class="tag-row">
+        <span class="tag">fast learning</span>
+        <span class="tag">performance feedback</span>
+        <span class="tag">exploration</span>
+        <span class="tag">organizational learning</span>
+        <span class="tag">target diversity</span>
+      </div>
       </div>
     </section>
   </main>
-
 </body>
 </html>
