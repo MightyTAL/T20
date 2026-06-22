@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Research interests, replication notes, and reading notes by Aoling Tang." />
+  <meta name="author" content="Aoling Tang" />
   <title>Research — Aoling Tang</title>
 
   <style>
@@ -14,14 +16,19 @@
       --muted:#6b7280;
       --accent:#1766d8;
       --bg:#ffffff;
+      --chip-bg:#f6f7f8;
       --border:rgba(15,23,42,.06);
+      --shadow:0 10px 30px rgba(15,23,42,0.06);
     }
 
     *{box-sizing:border-box;margin:0;padding:0}
+
     html{
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
       -webkit-font-smoothing:antialiased;
+      scroll-behavior:smooth;
     }
+
     body{
       background:var(--bg);
       color:var(--text);
@@ -29,7 +36,7 @@
       line-height:1.7;
     }
 
-    /* Top navigation (same as About page) */
+    /* Top navigation */
     .nav{
       max-width:var(--page-max);
       margin:28px auto 0;
@@ -38,13 +45,18 @@
       gap:28px;
       font-size:1rem;
     }
+
     .nav a{
       text-decoration:none;
       color:var(--text);
       padding-bottom:4px;
       border-bottom:2px solid transparent;
     }
-    .nav a:hover,
+
+    .nav a:hover{
+      border-bottom-color:var(--text);
+    }
+
     .nav a.active{
       border-bottom-color:var(--text);
       font-weight:600;
@@ -58,17 +70,52 @@
 
     section{
       max-width:var(--content-max);
+      margin-top:72px;
+    }
+
+    section:first-child{
+      margin-top:0;
     }
 
     h1{
       font-size:2.2rem;
       font-weight:700;
       margin-bottom:20px;
+      letter-spacing:-0.4px;
+    }
+
+    h2{
+      font-size:1.35rem;
+      font-weight:600;
+      border-bottom:1px solid var(--border);
+      padding-bottom:12px;
+      margin-bottom:18px;
+    }
+
+    h3{
+      font-size:1.08rem;
+      font-weight:700;
+      margin-bottom:8px;
     }
 
     p{
       font-size:1rem;
-      margin-bottom:28px;
+      margin-bottom:20px;
+    }
+
+    a{
+      color:var(--accent);
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-decoration:underline;
+    }
+
+    a:focus{
+      outline:3px solid rgba(23,102,216,0.14);
+      outline-offset:4px;
+      border-radius:6px;
     }
 
     /* image */
@@ -81,6 +128,7 @@
       height:auto;
       border:1px solid var(--border);
       border-radius:6px;
+      box-shadow:var(--shadow);
     }
 
     .caption{
@@ -89,9 +137,77 @@
       margin-top:8px;
     }
 
+    /* cards */
+    .card{
+      padding:20px 22px;
+      border:1px solid var(--border);
+      border-radius:16px;
+      background:#fbfbfc;
+      margin-top:18px;
+    }
+
+    .card p:last-child{
+      margin-bottom:0;
+    }
+
+    .meta{
+      color:var(--muted);
+      font-size:0.96rem;
+      margin-bottom:12px;
+    }
+
+    .tag-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:14px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      padding:5px 10px;
+      border-radius:999px;
+      background:var(--chip-bg);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:0.88rem;
+      line-height:1.3;
+    }
+
+    .paper-title{
+      font-weight:700;
+      font-size:1.04rem;
+      line-height:1.45;
+      margin-bottom:6px;
+    }
+
     @media (max-width:700px){
-      main{margin:36px auto; padding:0 18px}
-      h1{font-size:1.8rem}
+      .nav{
+        padding:0 18px;
+        gap:18px;
+      }
+
+      main{
+        margin:36px auto;
+        padding:0 18px;
+      }
+
+      section{
+        margin-top:52px;
+      }
+
+      h1{
+        font-size:1.8rem;
+      }
+
+      h2{
+        font-size:1.22rem;
+      }
+
+      .card{
+        padding:18px;
+      }
     }
   </style>
 </head>
@@ -105,18 +221,128 @@
   </nav>
 
   <main>
-    <section>
-      <h1>Screening function</h1>
+    <!-- Current research interest -->
+    <section id="current-interest">
+      <h1>Research</h1>
 
       <p>
         This semester, I am particularly interested in the screening function in organizational decision making.
       </p>
 
       <div class="figure">
-        <!-- 替换为你的图片文件名 -->
         <img src="screening.png" alt="Illustration of a screening function" />
         <div class="caption">
           An illustrative example of a screening function.
+        </div>
+      </div>
+    </section>
+
+    <!-- Replication notes -->
+    <section id="replication-notes">
+      <h2>Replication Notes</h2>
+
+      <p>
+        I use replication exercises as part of my research training. They help me understand how research
+        questions are translated into models, assumptions, simulations, empirical designs, and interpretations.
+      </p>
+
+      <p>
+        This section documents selected replication notes, coding exercises, and reflections from my learning
+        process. These notes are not intended as formal publications, but as part of my ongoing development as a researcher.
+      </p>
+
+      <div class="card">
+        <h3>Current replication focus</h3>
+
+        <p>
+          I am currently interested in papers related to organizational learning, mutual learning, performance feedback,
+          exploration, and decision making. My goal is to understand how model assumptions shape theoretical insights
+          and how computational approaches can be used to study organizational processes.
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">organizational learning</span>
+          <span class="tag">mutual learning</span>
+          <span class="tag">performance feedback</span>
+          <span class="tag">simulation</span>
+          <span class="tag">decision making</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Papers I like -->
+    <section id="papers-i-like">
+      <h2>Papers I Like</h2>
+
+      <p>
+        I keep a small list of papers that shape my current thinking about organizational learning,
+        mutual learning, feedback, exploration, and decision making. Some of them may become replication
+        exercises, reading notes, or starting points for future research ideas.
+      </p>
+
+      <div class="card">
+        <div class="paper-title">
+          The Impact of Learning Mode and Speed on Mutual Learning
+        </div>
+
+        <div class="meta">
+          Jerker Denrell, Michael Christensen, Thorbjørn Knudsen, and Chengwei Liu<br>
+          Academy of Management Review, published online 7 August 2025<br>
+          Accepted by Richard Makadok
+        </div>
+
+        <p>
+          I am interested in this paper because it connects learning processes, organizational adaptation,
+          and the dynamics of mutual learning. It is closely related to my broader interest in how people
+          and organizations make decisions, learn from information, and respond to uncertainty over time.
+        </p>
+
+        <p>
+          DOI:
+          <a href="https://doi.org/10.5465/amr.2023.0173" target="_blank" rel="noopener noreferrer">
+            10.5465/amr.2023.0173
+          </a>
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">mutual learning</span>
+          <span class="tag">learning mode</span>
+          <span class="tag">learning speed</span>
+          <span class="tag">organizational adaptation</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="paper-title">
+          Fast Learning and Sustained Exploration: The Role of Timely Performance Feedback
+        </div>
+
+        <div class="meta">
+          Jerker Denrell, Joonas Luukkonen, Nick Chater, and Chengwei Liu<br>
+          Strategic Management Journal, in press<br>
+          Available online 27 April 2026
+        </div>
+
+        <p>
+          I am interested in this paper because it examines how timely performance feedback changes the relationship
+          between learning speed and exploration. It speaks directly to questions about how organizations learn from
+          information, how individuals choose whom to imitate, and how fast learning can sometimes support rather than
+          undermine sustained exploration.
+        </p>
+
+        <p>
+          DOI:
+          <a href="https://doi.org/10.1002/smj.70098" target="_blank" rel="noopener noreferrer">
+            10.1002/smj.70098
+          </a>
+        </p>
+
+        <div class="tag-row">
+          <span class="tag">fast learning</span>
+          <span class="tag">performance feedback</span>
+          <span class="tag">exploration</span>
+          <span class="tag">organizational learning</span>
+          <span class="tag">target diversity</span>
         </div>
       </div>
     </section>
