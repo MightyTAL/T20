@@ -6,12 +6,13 @@
   <meta name="description" content="Research interests, replication notes, and selected readings by Aoling Tang." />
   <meta name="author" content="Aoling Tang" />
   <title>Research — Aoling Tang</title>
+
   <style>
     :root{
-      --page-max:980px;
+      --page-max:1180px;
       --content-max:760px;
-      --wide-max:900px;
-      --pad:28px;
+      --wide-max:1080px;
+      --pad:30px;
       --text:#0f172a;
       --muted:#6b7280;
       --accent:#1766d8;
@@ -19,22 +20,26 @@
       --soft-bg:#fbfbfc;
       --chip-bg:#f6f7f8;
       --border:rgba(15,23,42,.08);
-      --border-strong:rgba(15,23,42,.13);
+      --border-strong:rgba(15,23,42,.14);
       --shadow:0 10px 30px rgba(15,23,42,0.06);
-      --shadow-hover:0 16px 40px rgba(15,23,42,0.10);
+      --shadow-hover:0 16px 42px rgba(15,23,42,0.11);
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
+
     html{
       font-family: Cambria, "Cambria Math", Georgia, "Times New Roman", Times, serif;
       -webkit-font-smoothing:antialiased;
       scroll-behavior:smooth;
     }
+
     body{
       background:var(--bg);
       color:var(--text);
       font-size:17px;
       line-height:1.7;
     }
+
     /* Top navigation */
     .nav{
       max-width:var(--page-max);
@@ -44,160 +49,93 @@
       gap:28px;
       font-size:1rem;
     }
+
     .nav a{
       text-decoration:none;
       color:var(--text);
       padding-bottom:4px;
       border-bottom:2px solid transparent;
     }
+
     .nav a:hover{
       border-bottom-color:var(--text);
     }
+
     .nav a.active{
       border-bottom-color:var(--text);
       font-weight:600;
     }
+
     main{
       max-width:var(--page-max);
-      margin:50px auto 64px;
+      margin:52px auto 72px;
       padding:0 var(--pad);
     }
+
     section{
       max-width:var(--wide-max);
-      margin-top:78px;
-      scroll-margin-top:28px;
+      margin-top:84px;
+      scroll-margin-top:32px;
     }
+
     section:first-child{
       margin-top:0;
     }
+
     .text-block{
       max-width:var(--content-max);
     }
+
     h1{
-      font-size:2.35rem;
+      font-size:2.38rem;
       font-weight:700;
       margin-bottom:18px;
       letter-spacing:-0.5px;
     }
+
     h2{
-      font-size:1.35rem;
+      font-size:1.38rem;
       font-weight:600;
       border-bottom:1px solid var(--border);
       padding-bottom:12px;
-      margin-bottom:20px;
+      margin-bottom:22px;
     }
+
     h3{
-      font-size:1.08rem;
+      font-size:1.1rem;
       font-weight:700;
       margin-bottom:8px;
     }
+
     p{
       font-size:1rem;
       margin-bottom:20px;
     }
+
     a{
       color:var(--accent);
       text-decoration:none;
     }
+
     a:hover{
       text-decoration:underline;
     }
+
     a:focus{
       outline:3px solid rgba(23,102,216,0.14);
       outline-offset:4px;
       border-radius:6px;
     }
-    /* Page anchor navigation */
+
+    /* Anchor navigation */
     .section-links{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
       margin:22px 0 0;
     }
-    .section-links a{
-      display:inline-flex;
-      align-items:center;
-      padding:8px 13px;
-      border-radius:999px;
-      background:var(--chip-bg);
-      border:1px solid var(--border);
-      color:var(--text);
-      font-size:0.93rem;
-      text-decoration:none;
-      transition:background .18s ease, transform .18s ease, border-color .18s ease;
-    }
-    .section-links a:hover{
-      background:rgba(23,102,216,0.08);
-      border-color:rgba(23,102,216,0.20);
-      transform:translateY(-1px);
-    }
-    /* Figures */
-    .figure{
-      margin-top:24px;
-    }
-    .figure a{
-      display:block;
-      color:inherit;
-      text-decoration:none;
-    }
-    .figure img{
-      width:100%;
-      height:auto;
-      border:1px solid var(--border);
-      border-radius:10px;
-      box-shadow:var(--shadow);
-      background:#ffffff;
-      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
-    }
-    .figure a:hover img{
-      transform:translateY(-2px);
-      box-shadow:var(--shadow-hover);
-      border-color:var(--border-strong);
-    }
-    .caption{
-      font-size:0.92rem;
-      color:var(--muted);
-      margin-top:8px;
-      line-height:1.5;
-    }
-    .screening-figure{
-      max-width:760px;
-    }
-    /* Cards */
-    .card{
-      padding:22px 24px;
-      border:1px solid var(--border);
-      border-radius:18px;
-      background:var(--soft-bg);
-      margin-top:18px;
-      transition:box-shadow .18s ease, transform .18s ease, border-color .18s ease;
-    }
-    .card:hover{
-      box-shadow:var(--shadow);
-      transform:translateY(-1px);
-      border-color:var(--border-strong);
-    }
-    .card p:last-child{
-      margin-bottom:0;
-    }
-    .meta,
-    .replication-meta{
-      color:var(--muted);
-      font-size:0.96rem;
-      margin-bottom:14px;
-    }
-    .paper-title{
-      font-weight:700;
-      font-size:1.04rem;
-      line-height:1.45;
-      margin-bottom:6px;
-    }
-    .link-row{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:14px;
-    }
+
+    .section-links a,
     .button-link{
       display:inline-flex;
       align-items:center;
@@ -210,18 +148,103 @@
       text-decoration:none;
       transition:background .18s ease, transform .18s ease, border-color .18s ease;
     }
+
+    .section-links a:hover,
     .button-link:hover{
       background:rgba(23,102,216,0.08);
-      border-color:rgba(23,102,216,0.20);
-      text-decoration:none;
+      border-color:rgba(23,102,216,0.22);
       transform:translateY(-1px);
+      text-decoration:none;
     }
+
+    /* Figures */
+    .figure{
+      margin-top:24px;
+    }
+
+    .figure a{
+      display:block;
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .figure img{
+      width:100%;
+      height:auto;
+      border:1px solid var(--border);
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      background:#ffffff;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+
+    .figure a:hover img{
+      transform:translateY(-2px);
+      box-shadow:var(--shadow-hover);
+      border-color:var(--border-strong);
+    }
+
+    .caption{
+      font-size:0.92rem;
+      color:var(--muted);
+      margin-top:8px;
+      line-height:1.5;
+    }
+
+    /* Current interest layout */
+    .current-layout{
+      display:grid;
+      grid-template-columns:minmax(280px, 0.85fr) minmax(420px, 1.15fr);
+      gap:38px;
+      align-items:start;
+    }
+
+    .current-layout .figure{
+      margin-top:0;
+    }
+
+    /* Cards */
+    .card{
+      padding:24px 26px;
+      border:1px solid var(--border);
+      border-radius:20px;
+      background:var(--soft-bg);
+      margin-top:22px;
+      transition:box-shadow .18s ease, transform .18s ease, border-color .18s ease;
+    }
+
+    .card:hover{
+      box-shadow:var(--shadow);
+      transform:translateY(-1px);
+      border-color:var(--border-strong);
+    }
+
+    .card p:last-child{
+      margin-bottom:0;
+    }
+
+    .meta,
+    .replication-meta{
+      color:var(--muted);
+      font-size:0.96rem;
+      margin-bottom:14px;
+      line-height:1.55;
+    }
+
+    .link-row{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:14px;
+    }
+
     .tag-row{
       display:flex;
       flex-wrap:wrap;
       gap:8px;
       margin-top:16px;
     }
+
     .tag{
       display:inline-flex;
       align-items:center;
@@ -233,39 +256,45 @@
       font-size:0.88rem;
       line-height:1.3;
     }
-    /* Replication layout */
+
     .replication-intro{
       display:grid;
-      grid-template-columns:1.1fr 0.9fr;
-      gap:24px;
+      grid-template-columns:1.08fr 0.92fr;
+      gap:26px;
       align-items:start;
     }
+
     .replication-side{
       padding:16px 18px;
-      border-radius:14px;
+      border-radius:15px;
       background:#ffffff;
       border:1px solid var(--border);
     }
+
     .replication-side p{
       margin-bottom:12px;
       font-size:0.96rem;
       line-height:1.6;
     }
+
     .replication-side p:last-child{
       margin-bottom:0;
     }
+
     details{
       margin-top:18px;
       padding:14px 16px;
-      border-radius:14px;
+      border-radius:15px;
       background:#ffffff;
       border:1px solid var(--border);
     }
+
     summary{
       cursor:pointer;
       font-weight:700;
       color:var(--text);
     }
+
     details p{
       margin-top:12px;
       margin-bottom:0;
@@ -273,20 +302,43 @@
       font-size:0.96rem;
       line-height:1.6;
     }
-    .figure-grid{
+
+    /* Figure grids */
+    .figure-grid-2{
       display:grid;
       grid-template-columns:1fr 1fr;
-      gap:22px;
-      margin-top:28px;
+      gap:24px;
+      margin-top:30px;
     }
-    .figure-grid .figure{
+
+    .figure-grid-3{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:22px;
+      margin-top:30px;
+    }
+
+    .figure-wide{
+      margin-top:30px;
+    }
+
+    .figure-grid-2 .figure,
+    .figure-grid-3 .figure,
+    .figure-wide .figure{
       margin-top:0;
     }
+
+    .small-figure img{
+      border-radius:10px;
+    }
+
     /* Selected readings */
     .reading-list{
       display:grid;
       gap:14px;
+      max-width:var(--content-max);
     }
+
     .reading-card{
       padding:18px 20px;
       border:1px solid var(--border);
@@ -294,87 +346,131 @@
       background:var(--soft-bg);
       transition:box-shadow .18s ease, transform .18s ease, border-color .18s ease;
     }
+
     .reading-card:hover{
       box-shadow:var(--shadow);
       transform:translateY(-1px);
       border-color:var(--border-strong);
     }
-    .reading-card p{
-      margin-bottom:0;
+
+    .paper-title{
+      font-weight:700;
+      font-size:1.04rem;
+      line-height:1.45;
+      margin-bottom:6px;
     }
+
     .reading-doi{
       margin-top:10px;
       font-size:0.96rem;
+      margin-bottom:0;
     }
-    @media (max-width:780px){
+
+    @media (max-width:960px){
+      .current-layout,
       .replication-intro{
         grid-template-columns:1fr;
       }
-      .figure-grid{
+
+      .current-layout .figure{
+        margin-top:8px;
+      }
+
+      .figure-grid-3{
+        grid-template-columns:1fr 1fr;
+      }
+    }
+
+    @media (max-width:760px){
+      .figure-grid-2,
+      .figure-grid-3{
         grid-template-columns:1fr;
       }
     }
+
     @media (max-width:700px){
+      :root{
+        --pad:18px;
+      }
+
       .nav{
-        padding:0 18px;
+        padding:0 var(--pad);
         gap:18px;
       }
+
       main{
-        margin:36px auto 56px;
-        padding:0 18px;
+        margin:38px auto 58px;
+        padding:0 var(--pad);
       }
+
       section{
-        margin-top:56px;
+        margin-top:58px;
       }
+
       h1{
         font-size:1.9rem;
       }
+
       h2{
         font-size:1.22rem;
       }
+
       .card{
         padding:18px;
       }
+
       .reading-card{
         padding:16px 17px;
       }
     }
   </style>
 </head>
+
 <body>
+
   <!-- Navigation -->
   <nav class="nav">
     <a href="index.html">About</a>
     <a href="screening.html" class="active">Research</a>
   </nav>
+
   <main>
     <!-- Current research interest -->
     <section id="current-interest">
-      <div class="text-block">
-        <h1>Research</h1>
-        <p>
-          This semester, I am particularly interested in the screening function in organizational decision making.
-        </p>
-        <div class="section-links" aria-label="Sections on this page">
-          <a href="#current-interest">Current Interest</a>
-          <a href="#replication-notes">Replication Notes</a>
-          <a href="#selected-readings">Selected Readings</a>
+      <div class="current-layout">
+        <div class="text-block">
+          <h1>Research</h1>
+
+          <p>
+            This semester, I am particularly interested in the screening function in organizational decision making.
+          </p>
+
+          <div class="section-links" aria-label="Sections on this page">
+            <a href="#current-interest">Current Interest</a>
+            <a href="#replication-notes">Replication Notes</a>
+            <a href="#selected-readings">Selected Readings</a>
+          </div>
         </div>
-      </div>
-      <div class="figure screening-figure">
-        <a href="screening.png" target="_blank" rel="noopener noreferrer" title="Open image">
-          <img src="screening.png" alt="Illustration of a screening function" />
-        </a>
-        <div class="caption">
-          An illustrative example of a screening function. Click the figure to open it in a larger view.
+
+        <div class="figure">
+          <a href="screening.png" target="_blank" rel="noopener noreferrer" title="Open image">
+            <img src="screening.png" alt="Illustration of a screening function" />
+          </a>
+          <div class="caption">
+            An illustrative example of a screening function. Click the figure to open it in a larger view.
+          </div>
         </div>
       </div>
     </section>
+
     <!-- Replication notes -->
     <section id="replication-notes">
       <h2>Replication Notes</h2>
+
+      <!-- Replication 1 -->
       <div class="card">
         <h3>Replication 1: March (1991) Figure 1</h3>
+
         <div class="replication-intro">
           <div>
             <div class="replication-meta">
@@ -382,24 +478,28 @@
               March, J. G. (1991). Exploration and exploitation in organizational learning.
               <em>Organization Science</em>, 2(1), 71–87.
             </div>
+
             <p>
               This replication revisits Figure 1 in March's mutual-learning model. The figure illustrates a central
               idea in organizational learning: rapid socialization may help individuals align with the organizational
               code in the short run, but it can reduce long-run organizational knowledge by eliminating the diversity
               from which the code learns.
             </p>
+
             <div class="link-row">
               <a class="button-link" href="https://doi.org/10.1287/orsc.2.1.71" target="_blank" rel="noopener noreferrer">
                 Original paper
               </a>
             </div>
           </div>
+
           <div class="replication-side">
             <p><strong>Focus:</strong> mutual learning between individuals and an organizational code.</p>
             <p><strong>Outcome:</strong> equilibrium organizational knowledge.</p>
             <p><strong>Method:</strong> simulation-based replication.</p>
           </div>
         </div>
+
         <details>
           <summary>What I replicated</summary>
           <p>
@@ -408,6 +508,7 @@
             modified version that allows realized actions and gradual socialization.
           </p>
         </details>
+
         <div class="tag-row">
           <span class="tag">exploration</span>
           <span class="tag">exploitation</span>
@@ -415,7 +516,8 @@
           <span class="tag">mutual learning</span>
           <span class="tag">simulation</span>
         </div>
-        <div class="figure-grid">
+
+        <div class="figure-grid-2">
           <div class="figure">
             <a href="1.png" target="_blank" rel="noopener noreferrer" title="Open figure">
               <img src="1.png" alt="Paper-aligned replication of March 1991 Figure 1" />
@@ -424,6 +526,7 @@
               Paper-aligned replication of March (1991) Figure 1.
             </div>
           </div>
+
           <div class="figure">
             <a href="2.png" target="_blank" rel="noopener noreferrer" title="Open figure">
               <img src="2.png" alt="Modified replication of March 1991 Figure 1" />
@@ -434,19 +537,182 @@
           </div>
         </div>
       </div>
+
+      <!-- Replication 2 -->
+      <div class="card">
+        <h3>Replication 2: Bandit Model</h3>
+
+        <div class="replication-intro">
+          <div>
+            <div class="replication-meta">
+              Original source:<br>
+              Sutton, R. S., &amp; Barto, A. G. <em>Reinforcement Learning: An Introduction</em>, Chapter 2.
+            </div>
+
+            <p>
+              This replication focuses on the multi-armed bandit setting, where a learner repeatedly chooses among
+              alternatives and receives evaluative feedback. I reproduce several core examples that illustrate the
+              exploration-exploitation trade-off.
+            </p>
+          </div>
+
+          <div class="replication-side">
+            <p><strong>Focus:</strong> exploration and exploitation in bandit problems.</p>
+            <p><strong>Outcome:</strong> average reward and percentage of optimal action.</p>
+            <p><strong>Method:</strong> simulation-based reproduction of textbook figures and exercises.</p>
+          </div>
+        </div>
+
+        <details>
+          <summary>What I replicated</summary>
+          <p>
+            I reproduced several bandit algorithms, including sample-average methods, constant step-size updates,
+            ε-greedy exploration, optimistic initial values, UCB, and gradient bandit algorithms.
+          </p>
+        </details>
+
+        <div class="tag-row">
+          <span class="tag">bandit model</span>
+          <span class="tag">reinforcement learning</span>
+          <span class="tag">exploration</span>
+          <span class="tag">exploitation</span>
+          <span class="tag">simulation</span>
+        </div>
+
+        <div class="figure-grid-3">
+          <div class="figure small-figure">
+            <a href="constant step.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="constant step.png" alt="Nonstationary 10-armed bandit replication" />
+            </a>
+            <div class="caption">
+              Nonstationary 10-armed bandit: sample average vs. constant step-size.
+            </div>
+          </div>
+
+          <div class="figure small-figure">
+            <a href="greedy.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="greedy.png" alt="Epsilon-greedy bandit replication" />
+            </a>
+            <div class="caption">
+              ε-greedy action-value methods.
+            </div>
+          </div>
+
+          <div class="figure small-figure">
+            <a href="optimistic.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="optimistic.png" alt="Optimistic initial values replication" />
+            </a>
+            <div class="caption">
+              Optimistic initial values vs. realistic ε-greedy.
+            </div>
+          </div>
+
+          <div class="figure small-figure">
+            <a href="ucb.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="ucb.png" alt="UCB replication" />
+            </a>
+            <div class="caption">
+              UCB compared with ε-greedy.
+            </div>
+          </div>
+
+          <div class="figure small-figure">
+            <a href="gradient.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="gradient.png" alt="Gradient bandit algorithms replication" />
+            </a>
+            <div class="caption">
+              Gradient bandit algorithms.
+            </div>
+          </div>
+
+          <div class="figure small-figure">
+            <a href="summary.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="summary.png" alt="Bandit algorithm summary replication" />
+            </a>
+            <div class="caption">
+              Parameter comparison across bandit algorithms.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Replication 3 -->
+      <div class="card">
+        <h3>Replication 3: Aggregation–Learning Trade-off</h3>
+
+        <div class="replication-intro">
+          <div>
+            <div class="replication-meta">
+              Original paper:<br>
+              Piezunka, H., Aggarwal, V. A., &amp; Posen, H. E. (2022).
+              The Aggregation–Learning Trade-off.
+              <em>Organization Science</em>, 33(3), 1094–1115.
+            </div>
+
+            <p>
+              This replication focuses on how organizational decision-making structures shape both organizational
+              performance and individual learning. The model compares decision rules such as unitary, rotating,
+              plurality, two-stage, and average-beliefs structures.
+            </p>
+
+            <div class="link-row">
+              <a class="button-link" href="https://doi.org/10.1287/orsc.2021.1477" target="_blank" rel="noopener noreferrer">
+                Original paper
+              </a>
+            </div>
+          </div>
+
+          <div class="replication-side">
+            <p><strong>Focus:</strong> aggregation, learning, and decision-making structures.</p>
+            <p><strong>Outcome:</strong> organizational performance and individual learning.</p>
+            <p><strong>Method:</strong> computational replication.</p>
+          </div>
+        </div>
+
+        <details>
+          <summary>What I replicated</summary>
+          <p>
+            I compare the original paper's reported pattern with my replication results across different
+            decision-making structures. The replication tracks both organizational performance and individual learning.
+          </p>
+        </details>
+
+        <div class="tag-row">
+          <span class="tag">aggregation</span>
+          <span class="tag">individual learning</span>
+          <span class="tag">organizational decision making</span>
+          <span class="tag">decision structures</span>
+          <span class="tag">simulation</span>
+        </div>
+
+        <div class="figure-wide">
+          <div class="figure">
+            <a href="paper_vs_our_replication.png" target="_blank" rel="noopener noreferrer" title="Open figure">
+              <img src="paper_vs_our_replication.png" alt="Paper Figure 2 versus replication results" />
+            </a>
+            <div class="caption">
+              Paper Figure 2 vs. my replication: organizational performance and individual learning.
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+
     <!-- Selected readings -->
     <section id="selected-readings">
       <h2>Selected Readings</h2>
+
       <div class="reading-list">
         <div class="reading-card">
           <div class="paper-title">
             The Impact of Learning Mode and Speed on Mutual Learning
           </div>
+
           <div class="meta">
             Jerker Denrell, Michael Christensen, Thorbjørn Knudsen, and Chengwei Liu<br>
             Academy of Management Review, published online 7 August 2025
           </div>
+
           <p class="reading-doi">
             DOI:
             <a href="https://doi.org/10.5465/amr.2023.0173" target="_blank" rel="noopener noreferrer">
@@ -454,15 +720,18 @@
             </a>
           </p>
         </div>
+
         <div class="reading-card">
           <div class="paper-title">
             Fast Learning and Sustained Exploration: The Role of Timely Performance Feedback
           </div>
+
           <div class="meta">
             Jerker Denrell, Joonas Luukkonen, Nick Chater, and Chengwei Liu<br>
             Strategic Management Journal, in press<br>
             Available online 27 April 2026
           </div>
+
           <p class="reading-doi">
             DOI:
             <a href="https://doi.org/10.1002/smj.70098" target="_blank" rel="noopener noreferrer">
@@ -470,8 +739,43 @@
             </a>
           </p>
         </div>
+
+        <div class="reading-card">
+          <div class="paper-title">
+            Design of Decision-Making Organizations
+          </div>
+
+          <div class="meta">
+            Michael Christensen and Thorbjørn Knudsen
+          </div>
+        </div>
+
+        <div class="reading-card">
+          <div class="paper-title">
+            Context and Aggregation: An Experimental Study of Bias and Discrimination in Organizational Decisions
+          </div>
+        </div>
+
+        <div class="reading-card">
+          <div class="paper-title">
+            The Aggregation–Learning Trade-off
+          </div>
+
+          <div class="meta">
+            Henning Piezunka, Vikas A. Aggarwal, and Hart E. Posen<br>
+            Organization Science, 33(3), 1094–1115
+          </div>
+
+          <p class="reading-doi">
+            DOI:
+            <a href="https://doi.org/10.1287/orsc.2021.1477" target="_blank" rel="noopener noreferrer">
+              10.1287/orsc.2021.1477
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   </main>
+
 </body>
 </html>
